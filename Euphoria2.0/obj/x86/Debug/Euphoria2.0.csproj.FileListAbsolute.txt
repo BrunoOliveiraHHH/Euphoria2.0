@@ -1,3 +1,5 @@
+C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Debug\Euphoria2.0.exe.manifest
+C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Debug\Euphoria2.0.application
 C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Debug\Euphoria2.0.exe
 C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Debug\Euphoria2.0.pdb
 C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Debug\Euphoria.Dados.dll
@@ -8,5 +10,7 @@ C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Debug\Euphoria2.0.csprojResolveAssem
 C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Debug\Euphoria2._0.MainMenu.resources
 C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Debug\Euphoria2._0.Properties.Resources.resources
 C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Debug\Euphoria2.0.csproj.GenerateResource.Cache
+C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Debug\Euphoria2.0.exe.manifest
+C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Debug\Euphoria2.0.application
 C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Debug\Euphoria2.0.exe
 C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Debug\Euphoria2.0.pdb

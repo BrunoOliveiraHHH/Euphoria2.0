@@ -20,5 +20,20 @@ namespace Euphoria.Servico
         {
             return _dados.montaDtMulti(dtMulti);
         }
+
+        public DataTable ExpPorNvl(DataTable dtNvl)
+        {
+            return _dados.montaDtNvl(dtNvl);
+        }
+
+        public DataTable ExpPorDia(DataTable dtDia)
+        {
+            return _dados.montaDtDia(dtDia);
+        }
+
+        public DataTable ExpPorDif(DataTable dtDif)
+        {
+            return _dados.montaDtDificuldade(dtDif);
+        }
     }
 }

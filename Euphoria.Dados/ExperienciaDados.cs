@@ -93,26 +93,26 @@ namespace Euphoria.Dados
         private List<ItemExp> preencheListaNvl(List<ItemExp> listItem)
         {
             listItem.Clear();
-            listItem.Add(new ItemExp("0", "1"));
-            listItem.Add(new ItemExp("300", "2"));
-            listItem.Add(new ItemExp("900", "3"));
-            listItem.Add(new ItemExp("2.700", "4"));
-            listItem.Add(new ItemExp("6.500", "5"));
-            listItem.Add(new ItemExp("14.000", "6"));
-            listItem.Add(new ItemExp("23.000", "7"));
-            listItem.Add(new ItemExp("34.000", "8"));
-            listItem.Add(new ItemExp("48.000", "9"));
-            listItem.Add(new ItemExp("64.000", "10"));
-            listItem.Add(new ItemExp("85.000", "11"));
-            listItem.Add(new ItemExp("100.000", "12"));
-            listItem.Add(new ItemExp("120.000", "13"));
-            listItem.Add(new ItemExp("140.000", "14"));
-            listItem.Add(new ItemExp("165.000", "15"));
-            listItem.Add(new ItemExp("195.000", "16"));
-            listItem.Add(new ItemExp("225.000", "17"));
-            listItem.Add(new ItemExp("265.000", "18"));
-            listItem.Add(new ItemExp("305.000", "19"));
-            listItem.Add(new ItemExp("355.000", "20"));
+            listItem.Add(new ItemExp("1", "0"));
+            listItem.Add(new ItemExp("2", "300"));
+            listItem.Add(new ItemExp("3", "900"));
+            listItem.Add(new ItemExp("4", "2.700"));
+            listItem.Add(new ItemExp("5", "6.500"));
+            listItem.Add(new ItemExp("6", "14.000"));
+            listItem.Add(new ItemExp("7", "23.000"));
+            listItem.Add(new ItemExp("8", "34.000"));
+            listItem.Add(new ItemExp("9", "48.000"));
+            listItem.Add(new ItemExp("10", "64.000"));
+            listItem.Add(new ItemExp("11", "85.000"));
+            listItem.Add(new ItemExp("12", "100.000"));
+            listItem.Add(new ItemExp("13", "120.000"));
+            listItem.Add(new ItemExp("14", "140.000"));
+            listItem.Add(new ItemExp("15", "165.000"));
+            listItem.Add(new ItemExp("16", "195.000"));
+            listItem.Add(new ItemExp("17", "225.000"));
+            listItem.Add(new ItemExp("18", "265.000"));
+            listItem.Add(new ItemExp("19", "305.000"));
+            listItem.Add(new ItemExp("20", "355.000"));
 
             return listItem;
         }
@@ -134,29 +134,29 @@ namespace Euphoria.Dados
 
             column = new DataColumn();
             column.DataType = Type.GetType("System.String");
-            column.ColumnName = "Nvl1";
+            column.ColumnName = "Nvl/1";
             dtNvl.Columns.Add(column);
 
             column = new DataColumn();
             column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "XP1";
+            column.ColumnName = "XP/1";
             dtNvl.Columns.Add(column);
 
             listNvl = preencheListaNvl(listNvl);
 
-            int j = 20;
+            int j = 10;
 
-            for (int i = 0; i <= 19; i++)
+            for (int i = 0; i <= 9; i++)
             {
                 DataRow linha = dtNvl.NewRow();
-                linha["Nvl"] = listNvl[i].nvl;
+                linha["Nvl"] = listNvl[i].item;
                 linha["XP"] = listNvl[i].exp;
                 if (listNvl.Count > j)
                 {
-                    if (!String.IsNullOrEmpty(listNvl[j].nvl) && !String.IsNullOrEmpty(listNvl[j].exp))
+                    if (!String.IsNullOrEmpty(listNvl[j].item) && !String.IsNullOrEmpty(listNvl[j].exp))
                     {
-                        linha["Nvl1"] = listNvl[j].nvl;
-                        linha["XP1"] = listNvl[j].exp;
+                        linha["Nvl/1"] = listNvl[j].item;
+                        linha["XP/1"] = listNvl[j].exp;
                         j++;
                     }
                 }
@@ -172,26 +172,26 @@ namespace Euphoria.Dados
         private List<ItemExp> preencheListaDia(List<ItemExp> listItem)
         {
             listItem.Clear();
-            listItem.Add(new ItemExp("300", "1"));
-            listItem.Add(new ItemExp("600", "2"));
-            listItem.Add(new ItemExp("1.200", "3"));
-            listItem.Add(new ItemExp("1.700", "4"));
-            listItem.Add(new ItemExp("3.500", "5"));
-            listItem.Add(new ItemExp("4.000", "6"));
-            listItem.Add(new ItemExp("5.000", "7"));
-            listItem.Add(new ItemExp("6.000", "8"));
-            listItem.Add(new ItemExp("7.500", "9"));
-            listItem.Add(new ItemExp("9.000", "10"));
-            listItem.Add(new ItemExp("10.500", "11"));
-            listItem.Add(new ItemExp("11.500", "12"));
-            listItem.Add(new ItemExp("13.500", "13"));
-            listItem.Add(new ItemExp("15.000", "14"));
-            listItem.Add(new ItemExp("18.000", "15"));
-            listItem.Add(new ItemExp("20.000", "16"));
-            listItem.Add(new ItemExp("25.000", "17"));
-            listItem.Add(new ItemExp("27.000", "18"));
-            listItem.Add(new ItemExp("30.000", "19"));
-            listItem.Add(new ItemExp("40.000", "20"));
+            listItem.Add(new ItemExp("1", "300"));
+            listItem.Add(new ItemExp("2", "600"));
+            listItem.Add(new ItemExp("3", "1.200"));
+            listItem.Add(new ItemExp("4", "1.700"));
+            listItem.Add(new ItemExp("5", "3.500"));
+            listItem.Add(new ItemExp("6", "4.000"));
+            listItem.Add(new ItemExp("7", "5.000"));
+            listItem.Add(new ItemExp("8", "6.000"));
+            listItem.Add(new ItemExp("9", "7.500"));
+            listItem.Add(new ItemExp("10", "9.000"));
+            listItem.Add(new ItemExp("11", "10.500"));
+            listItem.Add(new ItemExp("12", "11.500"));
+            listItem.Add(new ItemExp("13", "13.500"));
+            listItem.Add(new ItemExp("14", "15.000"));
+            listItem.Add(new ItemExp("15", "18.000"));
+            listItem.Add(new ItemExp("16", "20.000"));
+            listItem.Add(new ItemExp("17", "25.000"));
+            listItem.Add(new ItemExp("18", "27.000"));
+            listItem.Add(new ItemExp("19", "30.000"));
+            listItem.Add(new ItemExp("20", "40.000"));
 
             return listItem;
         }
@@ -211,15 +211,34 @@ namespace Euphoria.Dados
             column.ColumnName = "XP por Dia";
             dtDia.Columns.Add(column);
 
+            column = new DataColumn();
+            column.DataType = Type.GetType("System.String");
+            column.ColumnName = "Nvl/1";
+            dtDia.Columns.Add(column);
+
+            column = new DataColumn();
+            column.DataType = System.Type.GetType("System.String");
+            column.ColumnName = "XP por Dia/1";
+            dtDia.Columns.Add(column);
+
             listDia = preencheListaDia(listDia);
 
+            int j = 10;
 
-            for (int i = 0; i < listDia.Count(); i++)
+            for (int i = 0; i <= 9; i++)
             {
                 DataRow linha = dtDia.NewRow();
-                linha["Nvl"] = listDia[i].nvl;
+                linha["Nvl"] = listDia[i].item;
                 linha["XP por Dia"] = listDia[i].exp;
-
+                if (listDia.Count > j)
+                {
+                    if (!String.IsNullOrEmpty(listDia[j].item) && !String.IsNullOrEmpty(listDia[j].exp))
+                    {
+                        linha["Nvl/1"] = listDia[j].item;
+                        linha["XP por Dia/1"] = listDia[j].exp;
+                        j++;
+                    }
+                }
                 dtDia.Rows.Add(linha);
 
             }
@@ -268,28 +287,28 @@ namespace Euphoria.Dados
             listNd = preencheListaND(listNd);
             #endregion
 
-            int j = 11;
-            int k = 23;
+            int j = 12;
+            int k = 24;
 
-            for (int i = 0; i <= 10; i++)
+            for (int i = 0; i <= 11; i++)
             {
                 DataRow linha = dtNd.NewRow();
-                linha["ND"] = listNd[i].nvl;
+                linha["ND"] = listNd[i].item;
                 linha["XP"] = listNd[i].exp;
                 if (listNd.Count > j)
                 {
-                    if (!String.IsNullOrEmpty(listNd[j].nvl) && !String.IsNullOrEmpty(listNd[j].exp))
+                    if (!String.IsNullOrEmpty(listNd[j].item) && !String.IsNullOrEmpty(listNd[j].exp))
                     {
-                        linha["ND/1"] = listNd[j].nvl;
+                        linha["ND/1"] = listNd[j].item;
                         linha["XP/1"] = listNd[j].exp;
                         j++;
                     }
                 }
                 if (listNd.Count > k)
                 {
-                    if (!String.IsNullOrEmpty(listNd[k].nvl) && !String.IsNullOrEmpty(listNd[k].exp))
+                    if (!String.IsNullOrEmpty(listNd[k].item) && !String.IsNullOrEmpty(listNd[k].exp))
                     {
-                        linha["ND/2"] = listNd[k].nvl;
+                        linha["ND/2"] = listNd[k].item;
                         linha["XP/2"] = listNd[k].exp;
                         k++;
                     }
@@ -302,40 +321,41 @@ namespace Euphoria.Dados
         private List<ItemExp> preencheListaND(List<ItemExp> listItem)
         {
             listItem.Clear();
-            listItem.Add(new ItemExp("0 ou 10", "0"));
-            listItem.Add(new ItemExp("25", "1/8"));
-            listItem.Add(new ItemExp("50", "1/4"));
-            listItem.Add(new ItemExp("100", "1/2"));
-            listItem.Add(new ItemExp("200", "1"));
-            listItem.Add(new ItemExp("450", "2"));
-            listItem.Add(new ItemExp("700", "3"));
-            listItem.Add(new ItemExp("1.100", "4"));
-            listItem.Add(new ItemExp("1.800", "5"));
-            listItem.Add(new ItemExp("2.300", "6"));
-            listItem.Add(new ItemExp("2.900", "7"));
-            listItem.Add(new ItemExp("3.900", "8"));
-            listItem.Add(new ItemExp("5.000", "9"));
-            listItem.Add(new ItemExp("5.900", "10"));
-            listItem.Add(new ItemExp("7.200", "11"));
-            listItem.Add(new ItemExp("8.400", "12"));
-            listItem.Add(new ItemExp("10.000", "13"));
-            listItem.Add(new ItemExp("11.500", "14"));
-            listItem.Add(new ItemExp("13.000", "15"));
-            listItem.Add(new ItemExp("15.000", "16"));
-            listItem.Add(new ItemExp("18.000", "17"));
-            listItem.Add(new ItemExp("20.000", "18"));
-            listItem.Add(new ItemExp("22.000", "19"));
-            listItem.Add(new ItemExp("25.000", "20"));
-            listItem.Add(new ItemExp("33.000", "21"));
-            listItem.Add(new ItemExp("41.000", "22"));
-            listItem.Add(new ItemExp("50.000", "23"));
-            listItem.Add(new ItemExp("62.000", "24"));
-            listItem.Add(new ItemExp("75.000", "25"));
-            listItem.Add(new ItemExp("90.000", "26"));
-            listItem.Add(new ItemExp("105.000", "27"));
-            listItem.Add(new ItemExp("120.000", "28"));
-            listItem.Add(new ItemExp("135.000", "29"));
-            listItem.Add(new ItemExp("155.000", "30"));
+            listItem.Add(new ItemExp("0"  ,"0 ou 10"));
+            listItem.Add(new ItemExp("1/8", "25"));
+            listItem.Add(new ItemExp("1/4", "50"));
+            listItem.Add(new ItemExp("1/2", "100"));
+            listItem.Add(new ItemExp("1", "200"));
+            listItem.Add(new ItemExp("2", "450"));
+            listItem.Add(new ItemExp("3", "700"));
+            listItem.Add(new ItemExp("4", "1.100"));
+            listItem.Add(new ItemExp("5", "1.800"));
+            listItem.Add(new ItemExp("6", "2.300"));
+            listItem.Add(new ItemExp("7", "2.900"));
+            listItem.Add(new ItemExp("8", "3.900"));
+            listItem.Add(new ItemExp("9", "5.000"));
+            listItem.Add(new ItemExp("10", "5.900"));
+            listItem.Add(new ItemExp("11", "7.200"));
+            listItem.Add(new ItemExp("12", "8.400"));
+            listItem.Add(new ItemExp("13", "10.000"));
+            listItem.Add(new ItemExp("14", "11.500"));
+            listItem.Add(new ItemExp("15", "13.000"));
+            listItem.Add(new ItemExp("16", "15.000"));
+            listItem.Add(new ItemExp("17", "18.000"));
+            listItem.Add(new ItemExp("18", "20.000"));
+            listItem.Add(new ItemExp("19", "22.000"));
+            listItem.Add(new ItemExp("20", "25.000"));
+            listItem.Add(new ItemExp("21", "33.000"));
+            listItem.Add(new ItemExp("22", "41.000"));
+            listItem.Add(new ItemExp("23", "50.000"));
+            listItem.Add(new ItemExp("24", "62.000"));
+            listItem.Add(new ItemExp("25", "75.000"));
+            listItem.Add(new ItemExp("26", "90.000"));
+            listItem.Add(new ItemExp("27", "105.000"));
+            listItem.Add(new ItemExp("28", "120.000"));
+            listItem.Add(new ItemExp("29", "135.000"));
+            listItem.Add(new ItemExp("30", "155.000"));
+
 
             return listItem;
         }
@@ -365,7 +385,7 @@ namespace Euphoria.Dados
             for (int i = 0; i <= 5; i++)
             {
                 DataRow linha = dtMulti.NewRow();
-                linha["Qtd"] = listNd[i].nvl;
+                linha["Qtd"] = listNd[i].item;
                 linha["Multi"] = listNd[i].exp;
                 dtMulti.Rows.Add(linha);
             }

@@ -1,0 +1,4 @@
+C:\Projetos\Euphoria2.0\Euphoria.Dados\bin\Release\Euphoria.Dados.dll
+C:\Projetos\Euphoria2.0\Euphoria.Dados\bin\Release\Euphoria.Dados.pdb
+C:\Projetos\Euphoria2.0\Euphoria.Dados\obj\Release\Euphoria.Dados.dll
+C:\Projetos\Euphoria2.0\Euphoria.Dados\obj\Release\Euphoria.Dados.pdb

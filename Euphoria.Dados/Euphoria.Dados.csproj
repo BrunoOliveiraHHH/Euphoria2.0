@@ -42,14 +42,13 @@
   <ItemGroup>
     <Compile Include="ExperienciaDados.cs" />
     <Compile Include="ItemModificador.cs" />
+    <Compile Include="ItemTesouro.cs" />
     <Compile Include="ModificadoresDados.cs" />
-    <Compile Include="ModPorHabDados.cs" />
-    <Compile Include="ModPorNDDados.cs" />
-    <Compile Include="ModPorNvlDados.cs" />
     <Compile Include="Multiplicadores.cs" />
     <Compile Include="ItemExp.cs" />
     <Compile Include="ItemPersonagem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TesourosDados.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

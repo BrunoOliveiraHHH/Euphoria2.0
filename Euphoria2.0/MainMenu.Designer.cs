@@ -39,13 +39,25 @@
             this.expPorNvlSubMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.expPorDifSubMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.expPorDiaSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.multiExpSubMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.modMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.modPorNDSubMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.modPorNvlSubMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.modPorHabSubMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tesouroMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.gemasSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.g10PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.g50PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.g100PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.g500PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.g1000PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.g5000PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.objetosSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.oDe25PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.oDe250PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.oDe750PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.oDe2500PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.oDe7500PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.calculoMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -74,7 +86,6 @@
             this.txtQtdMon = new System.Windows.Forms.TextBox();
             this.txtQtdXP = new System.Windows.Forms.TextBox();
             this.lblqtdXP = new System.Windows.Forms.Label();
-            this.multiExpSubMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -160,6 +171,14 @@
             this.expPorDiaSubMenu.Text = "Experiência por Dia de Aventura";
             this.expPorDiaSubMenu.Click += new System.EventHandler(this.expPorDiaSubMenu_Click);
             // 
+            // multiExpSubMenu
+            // 
+            this.multiExpSubMenu.BackColor = System.Drawing.Color.Transparent;
+            this.multiExpSubMenu.Name = "multiExpSubMenu";
+            this.multiExpSubMenu.Size = new System.Drawing.Size(285, 22);
+            this.multiExpSubMenu.Text = "Multiplicadores de Experiência";
+            this.multiExpSubMenu.Click += new System.EventHandler(this.multiExpSubMenu_Click);
+            // 
             // modMenu
             // 
             this.modMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -204,17 +223,105 @@
             // 
             // gemasSubMenu
             // 
+            this.gemasSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.g10PoSubMenu,
+            this.g50PoSubMenu,
+            this.g100PoSubMenu,
+            this.g500PoSubMenu,
+            this.g1000PoSubMenu,
+            this.g5000PoSubMenu});
             this.gemasSubMenu.Name = "gemasSubMenu";
-            this.gemasSubMenu.Size = new System.Drawing.Size(160, 22);
+            this.gemasSubMenu.Size = new System.Drawing.Size(156, 22);
             this.gemasSubMenu.Text = "Gemas";
-            this.gemasSubMenu.Click += new System.EventHandler(this.gemasSubMenu_Click);
+            // 
+            // g10PoSubMenu
+            // 
+            this.g10PoSubMenu.Name = "g10PoSubMenu";
+            this.g10PoSubMenu.Size = new System.Drawing.Size(170, 22);
+            this.g10PoSubMenu.Text = "Gemas de 10 Po";
+            this.g10PoSubMenu.Click += new System.EventHandler(this.g10PoSubMenu_Click);
+            // 
+            // g50PoSubMenu
+            // 
+            this.g50PoSubMenu.Name = "g50PoSubMenu";
+            this.g50PoSubMenu.Size = new System.Drawing.Size(170, 22);
+            this.g50PoSubMenu.Text = "Gemas de 50 Po";
+            this.g50PoSubMenu.Click += new System.EventHandler(this.g50PoSubMenu_Click);
+            // 
+            // g100PoSubMenu
+            // 
+            this.g100PoSubMenu.Name = "g100PoSubMenu";
+            this.g100PoSubMenu.Size = new System.Drawing.Size(170, 22);
+            this.g100PoSubMenu.Text = "Gemas de 100 Po";
+            this.g100PoSubMenu.Click += new System.EventHandler(this.g100PoSubMenu_Click);
+            // 
+            // g500PoSubMenu
+            // 
+            this.g500PoSubMenu.Name = "g500PoSubMenu";
+            this.g500PoSubMenu.Size = new System.Drawing.Size(170, 22);
+            this.g500PoSubMenu.Text = "Gemas de 500 Po";
+            this.g500PoSubMenu.Click += new System.EventHandler(this.g500PoSubMenu_Click);
+            // 
+            // g1000PoSubMenu
+            // 
+            this.g1000PoSubMenu.Name = "g1000PoSubMenu";
+            this.g1000PoSubMenu.Size = new System.Drawing.Size(170, 22);
+            this.g1000PoSubMenu.Text = "Gemas de 1000 Po";
+            this.g1000PoSubMenu.Click += new System.EventHandler(this.g1000PoSubMenu_Click);
+            // 
+            // g5000PoSubMenu
+            // 
+            this.g5000PoSubMenu.Name = "g5000PoSubMenu";
+            this.g5000PoSubMenu.Size = new System.Drawing.Size(170, 22);
+            this.g5000PoSubMenu.Text = "Gemas de 5000 Po";
+            this.g5000PoSubMenu.Click += new System.EventHandler(this.g5000PoSubMenu_Click);
             // 
             // objetosSubMenu
             // 
+            this.objetosSubMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.oDe25PoSubMenu,
+            this.oDe250PoSubMenu,
+            this.oDe750PoSubMenu,
+            this.oDe2500PoSubMenu,
+            this.oDe7500PoSubMenu});
             this.objetosSubMenu.Name = "objetosSubMenu";
-            this.objetosSubMenu.Size = new System.Drawing.Size(160, 22);
-            this.objetosSubMenu.Text = "Objetos de Valor";
-            this.objetosSubMenu.Click += new System.EventHandler(this.objetosSubMenu_Click);
+            this.objetosSubMenu.Size = new System.Drawing.Size(156, 22);
+            this.objetosSubMenu.Text = "Objetos de Arte";
+            // 
+            // oDe25PoSubMenu
+            // 
+            this.oDe25PoSubMenu.Name = "oDe25PoSubMenu";
+            this.oDe25PoSubMenu.Size = new System.Drawing.Size(216, 22);
+            this.oDe25PoSubMenu.Text = "Objetos de Arte de 25 Po";
+            this.oDe25PoSubMenu.Click += new System.EventHandler(this.oDe25PoSubMenu_Click);
+            // 
+            // oDe250PoSubMenu
+            // 
+            this.oDe250PoSubMenu.Name = "oDe250PoSubMenu";
+            this.oDe250PoSubMenu.Size = new System.Drawing.Size(216, 22);
+            this.oDe250PoSubMenu.Text = "Objetos de Arte de 250 Po";
+            this.oDe250PoSubMenu.Click += new System.EventHandler(this.oDe250PoSubMenu_Click);
+            // 
+            // oDe750PoSubMenu
+            // 
+            this.oDe750PoSubMenu.Name = "oDe750PoSubMenu";
+            this.oDe750PoSubMenu.Size = new System.Drawing.Size(216, 22);
+            this.oDe750PoSubMenu.Text = "Objetos de Arte de 750 Po";
+            this.oDe750PoSubMenu.Click += new System.EventHandler(this.oDe750PoSubMenu_Click);
+            // 
+            // oDe2500PoSubMenu
+            // 
+            this.oDe2500PoSubMenu.Name = "oDe2500PoSubMenu";
+            this.oDe2500PoSubMenu.Size = new System.Drawing.Size(216, 22);
+            this.oDe2500PoSubMenu.Text = "Objetos de Arte de 2500 Po";
+            this.oDe2500PoSubMenu.Click += new System.EventHandler(this.oDe2500PoSubMenu_Click);
+            // 
+            // oDe7500PoSubMenu
+            // 
+            this.oDe7500PoSubMenu.Name = "oDe7500PoSubMenu";
+            this.oDe7500PoSubMenu.Size = new System.Drawing.Size(216, 22);
+            this.oDe7500PoSubMenu.Text = "Objetos de Arte de 7500 Po";
+            this.oDe7500PoSubMenu.Click += new System.EventHandler(this.oDe7500PoSubMenu_Click);
             // 
             // calculoMenu
             // 
@@ -251,9 +358,14 @@
             // 
             // dtgFront
             // 
+            this.dtgFront.AllowUserToAddRows = false;
+            this.dtgFront.AllowUserToDeleteRows = false;
+            this.dtgFront.AllowUserToResizeColumns = false;
+            this.dtgFront.AllowUserToResizeRows = false;
             this.dtgFront.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgFront.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgFront.BackgroundColor = System.Drawing.Color.LightSalmon;
+            this.dtgFront.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,6 +375,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgFront.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtgFront.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgFront.Cursor = System.Windows.Forms.Cursors.IBeam;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Firebrick;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -272,8 +385,10 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtgFront.DefaultCellStyle = dataGridViewCellStyle2;
             this.dtgFront.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgFront.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dtgFront.GridColor = System.Drawing.Color.LightSalmon;
             this.dtgFront.Location = new System.Drawing.Point(3, 16);
+            this.dtgFront.MultiSelect = false;
             this.dtgFront.Name = "dtgFront";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.Firebrick;
@@ -283,6 +398,8 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgFront.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dtgFront.RowHeadersVisible = false;
+            this.dtgFront.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dtgFront.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dtgFront.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Firebrick;
             this.dtgFront.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -312,14 +429,13 @@
             // 
             // lblDificuldade
             // 
-            this.lblDificuldade.AutoSize = true;
             this.lblDificuldade.BackColor = System.Drawing.Color.White;
             this.lblDificuldade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblDificuldade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblDificuldade.ForeColor = System.Drawing.Color.Black;
             this.lblDificuldade.Location = new System.Drawing.Point(277, 109);
             this.lblDificuldade.Name = "lblDificuldade";
-            this.lblDificuldade.Size = new System.Drawing.Size(2, 19);
+            this.lblDificuldade.Size = new System.Drawing.Size(103, 19);
             this.lblDificuldade.TabIndex = 14;
             // 
             // label7
@@ -367,6 +483,7 @@
             this.txtMediaNvl.Name = "txtMediaNvl";
             this.txtMediaNvl.Size = new System.Drawing.Size(103, 20);
             this.txtMediaNvl.TabIndex = 9;
+            this.txtMediaNvl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
             // 
             // txtTotalEncontro
             // 
@@ -375,6 +492,7 @@
             this.txtTotalEncontro.Name = "txtTotalEncontro";
             this.txtTotalEncontro.Size = new System.Drawing.Size(103, 20);
             this.txtTotalEncontro.TabIndex = 7;
+            this.txtTotalEncontro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
             // 
             // label9
             // 
@@ -408,14 +526,13 @@
             // 
             // lblTotalDividido
             // 
-            this.lblTotalDividido.AutoSize = true;
             this.lblTotalDividido.BackColor = System.Drawing.Color.White;
             this.lblTotalDividido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblTotalDividido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblTotalDividido.ForeColor = System.Drawing.Color.Black;
             this.lblTotalDividido.Location = new System.Drawing.Point(277, 109);
             this.lblTotalDividido.Name = "lblTotalDividido";
-            this.lblTotalDividido.Size = new System.Drawing.Size(2, 19);
+            this.lblTotalDividido.Size = new System.Drawing.Size(103, 19);
             this.lblTotalDividido.TabIndex = 14;
             // 
             // label4
@@ -463,6 +580,7 @@
             this.txtQtdPlayer.Name = "txtQtdPlayer";
             this.txtQtdPlayer.Size = new System.Drawing.Size(103, 20);
             this.txtQtdPlayer.TabIndex = 9;
+            this.txtQtdPlayer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
             // 
             // txtTotalXP
             // 
@@ -471,6 +589,7 @@
             this.txtTotalXP.Name = "txtTotalXP";
             this.txtTotalXP.Size = new System.Drawing.Size(103, 20);
             this.txtTotalXP.TabIndex = 7;
+            this.txtTotalXP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
             // 
             // label6
             // 
@@ -494,6 +613,7 @@
             this.groupBox1.Controls.Add(this.txtQtdMon);
             this.groupBox1.Controls.Add(this.txtQtdXP);
             this.groupBox1.Controls.Add(this.lblqtdXP);
+            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
@@ -504,14 +624,14 @@
             // 
             // lblTotal
             // 
-            this.lblTotal.AutoSize = true;
             this.lblTotal.BackColor = System.Drawing.Color.White;
             this.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTotal.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblTotal.ForeColor = System.Drawing.Color.Black;
             this.lblTotal.Location = new System.Drawing.Point(277, 109);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(2, 19);
+            this.lblTotal.Size = new System.Drawing.Size(103, 19);
             this.lblTotal.TabIndex = 14;
             // 
             // label2
@@ -559,6 +679,7 @@
             this.txtQtdMon.Name = "txtQtdMon";
             this.txtQtdMon.Size = new System.Drawing.Size(103, 20);
             this.txtQtdMon.TabIndex = 9;
+            this.txtQtdMon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
             // 
             // txtQtdXP
             // 
@@ -567,6 +688,7 @@
             this.txtQtdXP.Name = "txtQtdXP";
             this.txtQtdXP.Size = new System.Drawing.Size(103, 20);
             this.txtQtdXP.TabIndex = 7;
+            this.txtQtdXP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
             // 
             // lblqtdXP
             // 
@@ -580,14 +702,6 @@
             this.lblqtdXP.Size = new System.Drawing.Size(262, 17);
             this.lblqtdXP.TabIndex = 6;
             this.lblqtdXP.Text = "Quantidade Total de Exp dos Monstros: ";
-            // 
-            // multiExpSubMenu
-            // 
-            this.multiExpSubMenu.BackColor = System.Drawing.Color.Transparent;
-            this.multiExpSubMenu.Name = "multiExpSubMenu";
-            this.multiExpSubMenu.Size = new System.Drawing.Size(285, 22);
-            this.multiExpSubMenu.Text = "Multiplicadores de Experiência";
-            this.multiExpSubMenu.Click += new System.EventHandler(this.multiExpSubMenu_Click);
             // 
             // MainMenu
             // 
@@ -666,6 +780,17 @@
         private System.Windows.Forms.DataGridView dtgFront;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ToolStripMenuItem multiExpSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem g10PoSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem g50PoSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem g100PoSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem g500PoSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem g1000PoSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem g5000PoSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem oDe25PoSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem oDe250PoSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem oDe750PoSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem oDe2500PoSubMenu;
+        private System.Windows.Forms.ToolStripMenuItem oDe7500PoSubMenu;
 
     }
 }

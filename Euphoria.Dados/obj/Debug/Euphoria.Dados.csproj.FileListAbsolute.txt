@@ -2,3 +2,4 @@ C:\Projetos\Euphoria2.0\Euphoria.Dados\bin\Debug\Euphoria.Dados.dll
 C:\Projetos\Euphoria2.0\Euphoria.Dados\bin\Debug\Euphoria.Dados.pdb
 C:\Projetos\Euphoria2.0\Euphoria.Dados\obj\Debug\Euphoria.Dados.dll
 C:\Projetos\Euphoria2.0\Euphoria.Dados\obj\Debug\Euphoria.Dados.pdb
+C:\Projetos\Euphoria2.0\Euphoria.Dados\obj\Debug\Euphoria.Dados.csprojResolveAssemblyReference.cache

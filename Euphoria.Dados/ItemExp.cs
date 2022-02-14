@@ -7,13 +7,13 @@ namespace Euphoria.Dados
 {
     public class ItemExp
     {
-        private String Nvl;
+        private String Item;
         private String Exp;
 
-        public String nvl
+        public String item
         {
-            get { return Nvl; }
-            set { Nvl = value; }
+            get { return Item; }
+            set { Item = value; }
         }
 
         public String exp
@@ -22,10 +22,10 @@ namespace Euphoria.Dados
             set { Exp = value; }
         }
 
-        public ItemExp(String Nvl, String XP)
+        public ItemExp(String Item, String XP)
         {
             exp = XP;
-            nvl = Nvl;
+            item = Item;
         }
     }
 }
