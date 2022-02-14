@@ -1,0 +1,16 @@
+C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Release\Euphoria2.0.exe.manifest
+C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Release\Euphoria2.0.application
+C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Release\Euphoria2.0.exe
+C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Release\Euphoria2.0.pdb
+C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Release\Euphoria.Dados.dll
+C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Release\Euphoria.Servico.dll
+C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Release\Euphoria.Dados.pdb
+C:\Projetos\Euphoria2.0\Euphoria2.0\bin\Release\Euphoria.Servico.pdb
+C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Release\Euphoria2.0.csprojResolveAssemblyReference.cache
+C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Release\Euphoria2._0.MainMenu.resources
+C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Release\Euphoria2._0.Properties.Resources.resources
+C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Release\Euphoria2.0.csproj.GenerateResource.Cache
+C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Release\Euphoria2.0.exe.manifest
+C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Release\Euphoria2.0.application
+C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Release\Euphoria2.0.exe
+C:\Projetos\Euphoria2.0\Euphoria2.0\obj\x86\Release\Euphoria2.0.pdb

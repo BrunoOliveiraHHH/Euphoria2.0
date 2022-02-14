@@ -19,11 +19,11 @@ namespace Euphoria2._0
                 case 1:
                     return _service.ExpPorND(dt);
                 case 2:
-                    return null;
+                    return _service.ExpPorNvl(dt);
                 case 3:
-                    return null;
+                    return _service.ExpPorDif(dt);
                 case 4:
-                    return null;
+                    return _service.ExpPorDia(dt);
                 case 5:
                     return _service.MultideXP(dt);
                 default:

@@ -14,8 +14,8 @@ namespace Euphoria2._0
         {
             try
             {
-                int XP = int.Parse(xp);
-                int Monstro = int.Parse(qtdMonstro);
+                Int64 XP = int.Parse(xp);
+                Int64 Monstro = int.Parse(qtdMonstro);
                 double total = 0;
                 if (Monstro == 2)
                 {
@@ -54,8 +54,8 @@ namespace Euphoria2._0
         {
             try
             {
-                int XP = int.Parse(xp);
-                int player = int.Parse(qtdPlayer);
+                Int64 XP = int.Parse(xp);
+                Int64 player = int.Parse(qtdPlayer);
                 double total = 0;
 
                 total = XP / player;
@@ -72,8 +72,8 @@ namespace Euphoria2._0
         {
             try
             {
-                int XP = int.Parse(xp);
-                int nvl = int.Parse(mediaNvl);
+                Int64 XP = int.Parse(xp);
+                Int64 nvl = int.Parse(mediaNvl);
                 string dificuldade = "";
 
                 switch (nvl)

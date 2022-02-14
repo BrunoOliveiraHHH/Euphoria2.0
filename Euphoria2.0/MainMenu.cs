@@ -11,9 +11,14 @@ namespace Euphoria2._0
 {
     public partial class MainMenu : Form
     {
+        #region Members
         private CalculoDeExperiencia calculo = new CalculoDeExperiencia();
         private Experiencia experiencia = new Experiencia();
+        private Modificadores modificadores = new Modificadores();
+        private Tesouros tesouro = new Tesouros();
+        #endregion
 
+        #region Methods
         public MainMenu()
         {
             InitializeComponent();
@@ -65,7 +70,9 @@ namespace Euphoria2._0
             InicializarTela();
             LimpaTexto();
         }
+        #endregion
 
+        #region Calculo de XP
         private void calculoMenu_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
@@ -75,19 +82,34 @@ namespace Euphoria2._0
 
         private void btnCalcularPlayer_Click(object sender, EventArgs e)
         {
+            if (lblTotalDividido.Text.Length > 0)
+            {
+                lblTotalDividido.Text = String.Empty;
+            }
+
             lblTotalDividido.Text = calculo.CalculoPlayer(txtTotalXP.Text.ToString(), txtQtdPlayer.Text.ToString());
         }
 
         private void btnCacular_Click(object sender, EventArgs e)
         {
+            if (lblTotal.Text.Length > 0)
+            {
+                lblTotal.Text = String.Empty;
+            }
             lblTotal.Text = calculo.CalculoXP(txtQtdXP.Text.ToString(), txtQtdMon.Text.ToString());
         }
 
         private void btnCalcularEncontro_Click(object sender, EventArgs e)
         {
+            if (lblDificuldade.Text.Length > 0)
+            {
+                lblDificuldade.Text = String.Empty;
+            }
            lblDificuldade.Text = calculo.CalcularEncontro(txtTotalEncontro.Text.ToString(), txtMediaNvl.Text.ToString());
         }
+        #endregion
 
+        #region Experiencia
         private void expPorNDSubMenu_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
@@ -118,35 +140,109 @@ namespace Euphoria2._0
             panel1.Visible = true;
             dtgFront.DataSource = experiencia.preencheDtg(5);            
         }
+        #endregion
 
+        #region Modificadores
         private void modPorNDSubMenu_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
-            //dtgFront.DataSource = modificadores.preencheDtg();
+            dtgFront.DataSource = modificadores.preencheDtg(1);
         }
 
         private void modPorNvlSubMenu_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
-            //dtgFront.DataSource = modificadores.preencheDtg();
+            dtgFront.DataSource = modificadores.preencheDtg(2);
         }
 
         private void modPorHabSubMenu_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
-            //dtgFront.DataSource = modificadores.preencheDtg();
+            dtgFront.DataSource = modificadores.preencheDtg(3);
         }
+        #endregion
 
-        private void gemasSubMenu_Click(object sender, EventArgs e)
+        #region Tesouros
+
+        #region Gemas
+        private void g10PoSubMenu_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
-            //dtgFront.DataSource = tesouro.preencheDtg();
+            dtgFront.DataSource = tesouro.preencheDtgGemas(1);
         }
 
-        private void objetosSubMenu_Click(object sender, EventArgs e)
+        private void g50PoSubMenu_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
-            //dtgFront.DataSource = tesouro.preencheDtg();
+            dtgFront.DataSource = tesouro.preencheDtgGemas(2);
+        }
+
+        private void g100PoSubMenu_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            dtgFront.DataSource = tesouro.preencheDtgGemas(3);
+        }
+
+        private void g500PoSubMenu_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            dtgFront.DataSource = tesouro.preencheDtgGemas(4);
+        }
+
+        private void g1000PoSubMenu_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            dtgFront.DataSource = tesouro.preencheDtgGemas(5);
+        }
+
+        private void g5000PoSubMenu_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            dtgFront.DataSource = tesouro.preencheDtgGemas(6);
+        }
+        #endregion
+
+        #region Obejtos de Arte
+        private void oDe25PoSubMenu_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            dtgFront.DataSource = tesouro.preencheDtgObjetos(1);
+        }
+
+        private void oDe250PoSubMenu_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            dtgFront.DataSource = tesouro.preencheDtgObjetos(2);
+        }
+
+        private void oDe750PoSubMenu_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            dtgFront.DataSource = tesouro.preencheDtgObjetos(3);
+        }
+
+        private void oDe2500PoSubMenu_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            dtgFront.DataSource = tesouro.preencheDtgObjetos(4);
+        }
+
+        private void oDe7500PoSubMenu_Click(object sender, EventArgs e)
+        {
+            panel1.Visible = true;
+            dtgFront.DataSource = tesouro.preencheDtgObjetos(5);
+        }
+        #endregion
+
+        #endregion
+
+        private void txtQtdXP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

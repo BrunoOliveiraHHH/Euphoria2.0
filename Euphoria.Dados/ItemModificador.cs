@@ -7,13 +7,13 @@ namespace Euphoria.Dados
 {
     public class ItemModificador
     {
-        private string Valor;
+        private string Item;
         private string Mod;
 
-        public string valor
+        public string item
         {
-            get { return Valor; }
-            set { Valor = value; }
+            get { return Item; }
+            set { Item = value; }
         }
 
         public string mod
@@ -22,10 +22,10 @@ namespace Euphoria.Dados
             set { Mod = value; }
         }
 
-        public ItemModificador(string Valor, string Mod)
+        public ItemModificador(string Item, string Mod)
         {
             mod = Mod;
-            valor = Valor;
+            item = Item;
         }
 
 
