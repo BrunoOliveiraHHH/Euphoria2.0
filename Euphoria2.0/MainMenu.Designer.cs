@@ -86,6 +86,8 @@
             this.txtQtdMon = new System.Windows.Forms.TextBox();
             this.txtQtdXP = new System.Windows.Forms.TextBox();
             this.lblqtdXP = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtQntdJogadoresEncounter = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -101,7 +103,7 @@
             this.homeMenu.Name = "homeMenu";
             this.homeMenu.Size = new System.Drawing.Size(52, 20);
             this.homeMenu.Text = "Home";
-            this.homeMenu.Click += new System.EventHandler(this.homeMenu_Click);
+            this.homeMenu.Click += new System.EventHandler(this.HomeMenu_Click);
             // 
             // menuStrip1
             // 
@@ -142,7 +144,7 @@
             this.expPorNDSubMenu.Name = "expPorNDSubMenu";
             this.expPorNDSubMenu.Size = new System.Drawing.Size(285, 22);
             this.expPorNDSubMenu.Text = "Experiência por ND de Monstro";
-            this.expPorNDSubMenu.Click += new System.EventHandler(this.expPorNDSubMenu_Click);
+            this.expPorNDSubMenu.Click += new System.EventHandler(this.ExpPorNDSubMenu_Click);
             // 
             // expPorNvlSubMenu
             // 
@@ -151,7 +153,7 @@
             this.expPorNvlSubMenu.Name = "expPorNvlSubMenu";
             this.expPorNvlSubMenu.Size = new System.Drawing.Size(285, 22);
             this.expPorNvlSubMenu.Text = "Experiência por Nvl de Jogador";
-            this.expPorNvlSubMenu.Click += new System.EventHandler(this.expPorNvlSubMenu_Click);
+            this.expPorNvlSubMenu.Click += new System.EventHandler(this.ExpPorNvlSubMenu_Click);
             // 
             // expPorDifSubMenu
             // 
@@ -160,7 +162,7 @@
             this.expPorDifSubMenu.Name = "expPorDifSubMenu";
             this.expPorDifSubMenu.Size = new System.Drawing.Size(285, 22);
             this.expPorDifSubMenu.Text = "Experiência por Dificuldade de Encontro";
-            this.expPorDifSubMenu.Click += new System.EventHandler(this.expPorDifSubMenu_Click);
+            this.expPorDifSubMenu.Click += new System.EventHandler(this.ExpPorDifSubMenu_Click);
             // 
             // expPorDiaSubMenu
             // 
@@ -169,7 +171,7 @@
             this.expPorDiaSubMenu.Name = "expPorDiaSubMenu";
             this.expPorDiaSubMenu.Size = new System.Drawing.Size(285, 22);
             this.expPorDiaSubMenu.Text = "Experiência por Dia de Aventura";
-            this.expPorDiaSubMenu.Click += new System.EventHandler(this.expPorDiaSubMenu_Click);
+            this.expPorDiaSubMenu.Click += new System.EventHandler(this.ExpPorDiaSubMenu_Click);
             // 
             // multiExpSubMenu
             // 
@@ -177,7 +179,7 @@
             this.multiExpSubMenu.Name = "multiExpSubMenu";
             this.multiExpSubMenu.Size = new System.Drawing.Size(285, 22);
             this.multiExpSubMenu.Text = "Multiplicadores de Experiência";
-            this.multiExpSubMenu.Click += new System.EventHandler(this.multiExpSubMenu_Click);
+            this.multiExpSubMenu.Click += new System.EventHandler(this.MultiExpSubMenu_Click);
             // 
             // modMenu
             // 
@@ -195,21 +197,21 @@
             this.modPorNDSubMenu.Name = "modPorNDSubMenu";
             this.modPorNDSubMenu.Size = new System.Drawing.Size(262, 22);
             this.modPorNDSubMenu.Text = "Proficiência por ND de Monstro";
-            this.modPorNDSubMenu.Click += new System.EventHandler(this.modPorNDSubMenu_Click);
+            this.modPorNDSubMenu.Click += new System.EventHandler(this.ModPorNDSubMenu_Click);
             // 
             // modPorNvlSubMenu
             // 
             this.modPorNvlSubMenu.Name = "modPorNvlSubMenu";
             this.modPorNvlSubMenu.Size = new System.Drawing.Size(262, 22);
             this.modPorNvlSubMenu.Text = "Proficiência por Nvl de Jogador";
-            this.modPorNvlSubMenu.Click += new System.EventHandler(this.modPorNvlSubMenu_Click);
+            this.modPorNvlSubMenu.Click += new System.EventHandler(this.ModPorNvlSubMenu_Click);
             // 
             // modPorHabSubMenu
             // 
             this.modPorHabSubMenu.Name = "modPorHabSubMenu";
             this.modPorHabSubMenu.Size = new System.Drawing.Size(262, 22);
             this.modPorHabSubMenu.Text = "Modficador por Valor de Habilidade";
-            this.modPorHabSubMenu.Click += new System.EventHandler(this.modPorHabSubMenu_Click);
+            this.modPorHabSubMenu.Click += new System.EventHandler(this.ModPorHabSubMenu_Click);
             // 
             // tesouroMenu
             // 
@@ -239,42 +241,42 @@
             this.g10PoSubMenu.Name = "g10PoSubMenu";
             this.g10PoSubMenu.Size = new System.Drawing.Size(170, 22);
             this.g10PoSubMenu.Text = "Gemas de 10 Po";
-            this.g10PoSubMenu.Click += new System.EventHandler(this.g10PoSubMenu_Click);
+            this.g10PoSubMenu.Click += new System.EventHandler(this.G10PoSubMenu_Click);
             // 
             // g50PoSubMenu
             // 
             this.g50PoSubMenu.Name = "g50PoSubMenu";
             this.g50PoSubMenu.Size = new System.Drawing.Size(170, 22);
             this.g50PoSubMenu.Text = "Gemas de 50 Po";
-            this.g50PoSubMenu.Click += new System.EventHandler(this.g50PoSubMenu_Click);
+            this.g50PoSubMenu.Click += new System.EventHandler(this.G50PoSubMenu_Click);
             // 
             // g100PoSubMenu
             // 
             this.g100PoSubMenu.Name = "g100PoSubMenu";
             this.g100PoSubMenu.Size = new System.Drawing.Size(170, 22);
             this.g100PoSubMenu.Text = "Gemas de 100 Po";
-            this.g100PoSubMenu.Click += new System.EventHandler(this.g100PoSubMenu_Click);
+            this.g100PoSubMenu.Click += new System.EventHandler(this.G100PoSubMenu_Click);
             // 
             // g500PoSubMenu
             // 
             this.g500PoSubMenu.Name = "g500PoSubMenu";
             this.g500PoSubMenu.Size = new System.Drawing.Size(170, 22);
             this.g500PoSubMenu.Text = "Gemas de 500 Po";
-            this.g500PoSubMenu.Click += new System.EventHandler(this.g500PoSubMenu_Click);
+            this.g500PoSubMenu.Click += new System.EventHandler(this.G500PoSubMenu_Click);
             // 
             // g1000PoSubMenu
             // 
             this.g1000PoSubMenu.Name = "g1000PoSubMenu";
             this.g1000PoSubMenu.Size = new System.Drawing.Size(170, 22);
             this.g1000PoSubMenu.Text = "Gemas de 1000 Po";
-            this.g1000PoSubMenu.Click += new System.EventHandler(this.g1000PoSubMenu_Click);
+            this.g1000PoSubMenu.Click += new System.EventHandler(this.G1000PoSubMenu_Click);
             // 
             // g5000PoSubMenu
             // 
             this.g5000PoSubMenu.Name = "g5000PoSubMenu";
             this.g5000PoSubMenu.Size = new System.Drawing.Size(170, 22);
             this.g5000PoSubMenu.Text = "Gemas de 5000 Po";
-            this.g5000PoSubMenu.Click += new System.EventHandler(this.g5000PoSubMenu_Click);
+            this.g5000PoSubMenu.Click += new System.EventHandler(this.G5000PoSubMenu_Click);
             // 
             // objetosSubMenu
             // 
@@ -293,35 +295,35 @@
             this.oDe25PoSubMenu.Name = "oDe25PoSubMenu";
             this.oDe25PoSubMenu.Size = new System.Drawing.Size(216, 22);
             this.oDe25PoSubMenu.Text = "Objetos de Arte de 25 Po";
-            this.oDe25PoSubMenu.Click += new System.EventHandler(this.oDe25PoSubMenu_Click);
+            this.oDe25PoSubMenu.Click += new System.EventHandler(this.ODe25PoSubMenu_Click);
             // 
             // oDe250PoSubMenu
             // 
             this.oDe250PoSubMenu.Name = "oDe250PoSubMenu";
             this.oDe250PoSubMenu.Size = new System.Drawing.Size(216, 22);
             this.oDe250PoSubMenu.Text = "Objetos de Arte de 250 Po";
-            this.oDe250PoSubMenu.Click += new System.EventHandler(this.oDe250PoSubMenu_Click);
+            this.oDe250PoSubMenu.Click += new System.EventHandler(this.ODe250PoSubMenu_Click);
             // 
             // oDe750PoSubMenu
             // 
             this.oDe750PoSubMenu.Name = "oDe750PoSubMenu";
             this.oDe750PoSubMenu.Size = new System.Drawing.Size(216, 22);
             this.oDe750PoSubMenu.Text = "Objetos de Arte de 750 Po";
-            this.oDe750PoSubMenu.Click += new System.EventHandler(this.oDe750PoSubMenu_Click);
+            this.oDe750PoSubMenu.Click += new System.EventHandler(this.ODe750PoSubMenu_Click);
             // 
             // oDe2500PoSubMenu
             // 
             this.oDe2500PoSubMenu.Name = "oDe2500PoSubMenu";
             this.oDe2500PoSubMenu.Size = new System.Drawing.Size(216, 22);
             this.oDe2500PoSubMenu.Text = "Objetos de Arte de 2500 Po";
-            this.oDe2500PoSubMenu.Click += new System.EventHandler(this.oDe2500PoSubMenu_Click);
+            this.oDe2500PoSubMenu.Click += new System.EventHandler(this.ODe2500PoSubMenu_Click);
             // 
             // oDe7500PoSubMenu
             // 
             this.oDe7500PoSubMenu.Name = "oDe7500PoSubMenu";
             this.oDe7500PoSubMenu.Size = new System.Drawing.Size(216, 22);
             this.oDe7500PoSubMenu.Text = "Objetos de Arte de 7500 Po";
-            this.oDe7500PoSubMenu.Click += new System.EventHandler(this.oDe7500PoSubMenu_Click);
+            this.oDe7500PoSubMenu.Click += new System.EventHandler(this.ODe7500PoSubMenu_Click);
             // 
             // calculoMenu
             // 
@@ -329,7 +331,7 @@
             this.calculoMenu.Name = "calculoMenu";
             this.calculoMenu.Size = new System.Drawing.Size(205, 20);
             this.calculoMenu.Text = "Cálculo de Experiência de Encontro";
-            this.calculoMenu.Click += new System.EventHandler(this.calculoMenu_Click);
+            this.calculoMenu.Click += new System.EventHandler(this.CalculoMenu_Click);
             // 
             // panel1
             // 
@@ -412,6 +414,8 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.txtQntdJogadoresEncounter);
             this.groupBox3.Controls.Add(this.lblDificuldade);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.label8);
@@ -433,7 +437,7 @@
             this.lblDificuldade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblDificuldade.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblDificuldade.ForeColor = System.Drawing.Color.Black;
-            this.lblDificuldade.Location = new System.Drawing.Point(277, 109);
+            this.lblDificuldade.Location = new System.Drawing.Point(277, 136);
             this.lblDificuldade.Name = "lblDificuldade";
             this.lblDificuldade.Size = new System.Drawing.Size(103, 19);
             this.lblDificuldade.TabIndex = 14;
@@ -444,7 +448,7 @@
             this.label7.Cursor = System.Windows.Forms.Cursors.No;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(107, 109);
+            this.label7.Location = new System.Drawing.Point(107, 136);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(163, 17);
@@ -467,14 +471,14 @@
             // btnCalcularEncontro
             // 
             this.btnCalcularEncontro.ForeColor = System.Drawing.Color.Black;
-            this.btnCalcularEncontro.Location = new System.Drawing.Point(277, 80);
+            this.btnCalcularEncontro.Location = new System.Drawing.Point(277, 107);
             this.btnCalcularEncontro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnCalcularEncontro.Name = "btnCalcularEncontro";
             this.btnCalcularEncontro.Size = new System.Drawing.Size(103, 23);
             this.btnCalcularEncontro.TabIndex = 10;
             this.btnCalcularEncontro.Text = "Calcular";
             this.btnCalcularEncontro.UseVisualStyleBackColor = true;
-            this.btnCalcularEncontro.Click += new System.EventHandler(this.btnCalcularEncontro_Click);
+            this.btnCalcularEncontro.Click += new System.EventHandler(this.BtnCalcularEncontro_Click);
             // 
             // txtMediaNvl
             // 
@@ -483,7 +487,7 @@
             this.txtMediaNvl.Name = "txtMediaNvl";
             this.txtMediaNvl.Size = new System.Drawing.Size(103, 20);
             this.txtMediaNvl.TabIndex = 9;
-            this.txtMediaNvl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
+            this.txtMediaNvl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQtdXP_KeyPress);
             // 
             // txtTotalEncontro
             // 
@@ -492,7 +496,7 @@
             this.txtTotalEncontro.Name = "txtTotalEncontro";
             this.txtTotalEncontro.Size = new System.Drawing.Size(103, 20);
             this.txtTotalEncontro.TabIndex = 7;
-            this.txtTotalEncontro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
+            this.txtTotalEncontro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQtdXP_KeyPress);
             // 
             // label9
             // 
@@ -571,7 +575,7 @@
             this.btnCalcularPlayer.TabIndex = 10;
             this.btnCalcularPlayer.Text = "Calcular";
             this.btnCalcularPlayer.UseVisualStyleBackColor = true;
-            this.btnCalcularPlayer.Click += new System.EventHandler(this.btnCalcularPlayer_Click);
+            this.btnCalcularPlayer.Click += new System.EventHandler(this.BtnCalcularPlayer_Click);
             // 
             // txtQtdPlayer
             // 
@@ -580,7 +584,7 @@
             this.txtQtdPlayer.Name = "txtQtdPlayer";
             this.txtQtdPlayer.Size = new System.Drawing.Size(103, 20);
             this.txtQtdPlayer.TabIndex = 9;
-            this.txtQtdPlayer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
+            this.txtQtdPlayer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQtdXP_KeyPress);
             // 
             // txtTotalXP
             // 
@@ -589,7 +593,7 @@
             this.txtTotalXP.Name = "txtTotalXP";
             this.txtTotalXP.Size = new System.Drawing.Size(103, 20);
             this.txtTotalXP.TabIndex = 7;
-            this.txtTotalXP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
+            this.txtTotalXP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQtdXP_KeyPress);
             // 
             // label6
             // 
@@ -640,7 +644,7 @@
             this.label2.Cursor = System.Windows.Forms.Cursors.No;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(124, 109);
+            this.label2.Location = new System.Drawing.Point(128, 109);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(145, 17);
@@ -653,12 +657,12 @@
             this.label1.Cursor = System.Windows.Forms.Cursors.No;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(52, 54);
+            this.label1.Location = new System.Drawing.Point(65, 54);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 17);
+            this.label1.Size = new System.Drawing.Size(208, 17);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Quantidade Total de Jogadores: ";
+            this.label1.Text = "Quantidade Total de Monstros: ";
             // 
             // btnCacular
             // 
@@ -670,7 +674,7 @@
             this.btnCacular.TabIndex = 10;
             this.btnCacular.Text = "Calcular";
             this.btnCacular.UseVisualStyleBackColor = true;
-            this.btnCacular.Click += new System.EventHandler(this.btnCacular_Click);
+            this.btnCacular.Click += new System.EventHandler(this.BtnCacular_Click);
             // 
             // txtQtdMon
             // 
@@ -679,7 +683,7 @@
             this.txtQtdMon.Name = "txtQtdMon";
             this.txtQtdMon.Size = new System.Drawing.Size(103, 20);
             this.txtQtdMon.TabIndex = 9;
-            this.txtQtdMon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
+            this.txtQtdMon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQtdXP_KeyPress);
             // 
             // txtQtdXP
             // 
@@ -688,7 +692,7 @@
             this.txtQtdXP.Name = "txtQtdXP";
             this.txtQtdXP.Size = new System.Drawing.Size(103, 20);
             this.txtQtdXP.TabIndex = 7;
-            this.txtQtdXP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdXP_KeyPress);
+            this.txtQtdXP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQtdXP_KeyPress);
             // 
             // lblqtdXP
             // 
@@ -696,12 +700,33 @@
             this.lblqtdXP.Cursor = System.Windows.Forms.Cursors.No;
             this.lblqtdXP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.lblqtdXP.ForeColor = System.Drawing.Color.White;
-            this.lblqtdXP.Location = new System.Drawing.Point(7, 28);
+            this.lblqtdXP.Location = new System.Drawing.Point(11, 28);
             this.lblqtdXP.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblqtdXP.Name = "lblqtdXP";
             this.lblqtdXP.Size = new System.Drawing.Size(262, 17);
             this.lblqtdXP.TabIndex = 6;
             this.lblqtdXP.Text = "Quantidade Total de Exp dos Monstros: ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.No;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(89, 81);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(181, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Quantidade de Jogadores: ";
+            // 
+            // txtQntdJogadoresEncounter
+            // 
+            this.txtQntdJogadoresEncounter.Location = new System.Drawing.Point(277, 80);
+            this.txtQntdJogadoresEncounter.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtQntdJogadoresEncounter.Name = "txtQntdJogadoresEncounter";
+            this.txtQntdJogadoresEncounter.Size = new System.Drawing.Size(103, 20);
+            this.txtQntdJogadoresEncounter.TabIndex = 15;
             // 
             // MainMenu
             // 
@@ -791,6 +816,7 @@
         private System.Windows.Forms.ToolStripMenuItem oDe750PoSubMenu;
         private System.Windows.Forms.ToolStripMenuItem oDe2500PoSubMenu;
         private System.Windows.Forms.ToolStripMenuItem oDe7500PoSubMenu;
-
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtQntdJogadoresEncounter;
     }
 }

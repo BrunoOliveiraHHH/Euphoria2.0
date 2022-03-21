@@ -8,545 +8,634 @@ namespace Euphoria2._0
 {
     public class CalculoDeExperiencia
     {
-        private Multiplicadores multi = new Multiplicadores();
+        private readonly Multiplicadores multi = new Multiplicadores();
 
         public string CalculoXP(string xp, string qtdMonstro)
         {
-            try
+            Int64 XP = int.Parse(xp);
+            Int64 Monstro = int.Parse(qtdMonstro);
+            double total;
+            if (Monstro == 2)
             {
-                Int64 XP = int.Parse(xp);
-                Int64 Monstro = int.Parse(qtdMonstro);
-                double total = 0;
-                if (Monstro == 2)
-                {
-                    total = XP * multi.MULTI_1_5;
-                }
-                else if (Monstro >= 3 && Monstro <= 6)
-                {
-                    total = XP * multi.MULTI_2;
-                }
-                else if (Monstro >= 7 && Monstro <= 10)
-                {
-                    total = XP * multi.MULTI_2_5;
-                }
-                else if (Monstro >= 11 && Monstro <= 14)
-                {
-                    total = XP * multi.MULTI_3;
-                }
-                else if (Monstro >= 15)
-                {
-                    total = XP * multi.MULTI_4;
-                }
-                else
-                {
-                    total = XP;
-                }
+                total = XP * multi.MULTI_1_5;
+            }
+            else if (Monstro >= 3 && Monstro <= 6)
+            {
+                total = XP * multi.MULTI_2;
+            }
+            else if (Monstro >= 7 && Monstro <= 10)
+            {
+                total = XP * multi.MULTI_2_5;
+            }
+            else if (Monstro >= 11 && Monstro <= 14)
+            {
+                total = XP * multi.MULTI_3;
+            }
+            else if (Monstro >= 15)
+            {
+                total = XP * multi.MULTI_4;
+            }
+            else
+            {
+                total = XP;
+            }
 
-                return total.ToString();
-            }
-            catch
-            {
-                return "Preenchimento invalido, preencher apenas com numeros.";
-            }
+            return total.ToString();
         }
 
         public string CalculoPlayer(string xp, string qtdPlayer)
         {
-            try
-            {
-                Int64 XP = int.Parse(xp);
-                Int64 player = int.Parse(qtdPlayer);
-                double total = 0;
 
-                total = XP / player;
+            Int64 XP = int.Parse(xp);
+            Int64 player = int.Parse(qtdPlayer);
+            double total;
 
-                return total.ToString();
-            }
-            catch
-            {
-                return "Preenchimento invalido, preencher apenas com numeros.";
-            }
+            total = XP / player;
+
+            return total.ToString();
+
         }
 
-        public string CalcularEncontro(string xp, string mediaNvl)
+        public string CalcularEncontro(string xp, string mediaNvl, string qntPlayer)
         {
-            try
+
+            Int64 XP = int.Parse(xp);
+            Int64 nvl = int.Parse(mediaNvl);
+            Int64 qntP = int.Parse(qntPlayer);
+            string dificuldade = "";
+            Int64 facil;
+            Int64 medio;
+            Int64 dificil;
+            Int64 mortal;
+
+            switch (nvl)
             {
-                Int64 XP = int.Parse(xp);
-                Int64 nvl = int.Parse(mediaNvl);
-                string dificuldade = "";
+                case 1:
 
-                switch (nvl)
-                {
-                    case 1:
-                        if (XP <= 25)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 25 & XP <= 50)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 50 & XP <= 75)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 75 & XP <= 100)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    facil = qntP * 25;
+                    medio = qntP * 50;
+                    dificil = qntP * 75;
+                    mortal = qntP * 100;
 
-                        break;
-                    case 2:
-                        if (XP <= 50)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 50 & XP <= 100)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 100 & XP <= 150)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 150 & XP <= 200)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
 
-                        break;
-                    case 3:
-                        if (XP <= 75)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 75 & XP <= 150)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 150 & XP <= 225)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 225 & XP <= 400)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    break;
+                case 2:
 
-                        break;
-                    case 4:
-                        if (XP <= 125)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 125 & XP <= 250)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 250 & XP <= 375)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 375 & XP <= 500)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    facil = qntP * 50;
+                    medio = qntP * 100;
+                    dificil = qntP * 150;
+                    mortal = qntP * 200;
 
-                        break;
-                    case 5:
-                        if (XP <= 250)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 250 & XP <= 500)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 500 & XP <= 750)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 750 & XP <= 1100)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
 
-                        break;
-                    case 6:
-                        if (XP <= 300)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 300 & XP <= 600)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 600 & XP <= 900)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 900 & XP <= 1400)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    break;
+                case 3:
+                    facil = qntP * 75;
+                    medio = qntP * 150;
+                    dificil = qntP * 225;
+                    mortal = qntP * 400;
 
-                        break;
-                    case 7:
-                        if (XP <= 350)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 350 & XP <= 750)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 750 & XP <= 1100)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 1100 & XP <= 1700)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
 
-                        break;
-                    case 8:
-                        if (XP <= 450)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 450 & XP <= 900)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 900 & XP <= 1400)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 1400 & XP <= 2100)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    break;
+                case 4:
+                    facil = qntP * 125;
+                    medio = qntP * 250;
+                    dificil = qntP * 375;
+                    mortal = qntP * 500;
 
-                        break;
-                    case 9:
-                        if (XP <= 550)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 550 & XP <= 1100)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 1100 & XP <= 1600)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 1600 & XP <= 2400)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
 
-                        break;
-                    case 10:
-                        if (XP <= 600)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 600 & XP <= 1200)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 1200 & XP <= 1900)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 1900 & XP <= 2800)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    break;
+                case 5:
+                    facil = qntP * 250;
+                    medio = qntP * 500;
+                    dificil = qntP * 750;
+                    mortal = qntP * 1100;
 
-                        break;
-                    case 11:
-                        if (XP <= 800)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 800 & XP <= 1600)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 1600 & XP <= 2400)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 2400 & XP <= 3600)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
 
-                        break;
-                    case 12:
-                        if (XP <= 1000)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 1000 & XP <= 2000)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 2000 & XP <= 3000)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 3000 & XP <= 4500)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    break;
+                case 6:
+                    facil = qntP * 300;
+                    medio = qntP * 600;
+                    dificil = qntP * 900;
+                    mortal = qntP * 1400;
 
-                        break;
-                    case 13:
-                        if (XP <= 1100)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 1100 & XP <= 2200)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 2200 & XP <= 3400)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 3400 & XP <= 5100)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
 
-                        break;
-                    case 14:
-                        if (XP <= 1250)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 1250 & XP <= 2500)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 2500 & XP <= 3800)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 3800 & XP <= 5700)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    break;
+                case 7:
+                    facil = qntP * 350;
+                    medio = qntP * 750;
+                    dificil = qntP * 1100;
+                    mortal = qntP * 1700;
 
-                        break;
-                    case 15:
-                        if (XP <= 1400)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 1400 & XP <= 2800)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 2800 & XP <= 4300)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 4300 & XP <= 6400)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
 
-                        break;
-                    case 16:
-                        if (XP <= 1600)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 1600 & XP <= 3200)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 3200 & XP <= 4800)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 4800 & XP <= 7200)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    break;
+                case 8:
+                    facil = qntP * 450;
+                    medio = qntP * 900;
+                    dificil = qntP * 1400;
+                    mortal = qntP * 2100;
 
-                        break;
-                    case 17:
-                        if (XP <= 2000)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 2000 & XP <= 3900)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 3900 & XP <= 5900)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 5900 & XP <= 8800)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
 
-                        break;
-                    case 18:
-                        if (XP <= 2100)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 2100 & XP <= 4200)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 4200 & XP <= 6300)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 6300 & XP <= 9500)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    break;
+                case 9:
+                    facil = qntP * 550;
+                    medio = qntP * 1100;
+                    dificil = qntP * 1600;
+                    mortal = qntP * 2400;
 
-                        break;
-                    case 19:
-                        if (XP <= 2400)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 2400 & XP <= 4900)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 4900 & XP <= 7300)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 7300 & XP <= 10900)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
 
-                        break;
-                    case 20:
-                        if (XP <= 2800)
-                        {
-                            dificuldade = "Fácil";
-                        }
-                        else if (XP > 2800 & XP <= 5700)
-                        {
-                            dificuldade = "Médio";
-                        }
-                        else if (XP > 5700 & XP <= 8500)
-                        {
-                            dificuldade = "Difícil";
-                        }
-                        else if (XP > 8500 & XP <= 12700)
-                        {
-                            dificuldade = "Mortal";
-                        }
-                        else
-                        {
-                            dificuldade = "Impossível";
-                        }
+                    break;
+                case 10:
+                    facil = qntP * 600;
+                    medio = qntP * 1200;
+                    dificil = qntP * 1900;
+                    mortal = qntP * 2800;
 
-                        break;
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
 
-                }
+                    break;
+                case 11:
+                    facil = qntP * 800;
+                    medio = qntP * 1600;
+                    dificil = qntP * 2400;
+                    mortal = qntP * 3600;
 
-                return dificuldade;
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
+
+                    break;
+                case 12:
+                    facil = qntP * 1000;
+                    medio = qntP * 2000;
+                    dificil = qntP * 3000;
+                    mortal = qntP * 4500;
+
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
+
+                    break;
+                case 13:
+                    facil = qntP * 1100;
+                    medio = qntP * 2200;
+                    dificil = qntP * 3400;
+                    mortal = qntP * 5100;
+
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
+
+                    break;
+                case 14:
+                    facil = qntP * 1250;
+                    medio = qntP * 2500;
+                    dificil = qntP * 3800;
+                    mortal = qntP * 5700;
+
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
+
+                    break;
+                case 15:
+                    facil = qntP * 1400;
+                    medio = qntP * 2800;
+                    dificil = qntP * 4300;
+                    mortal = qntP * 6400;
+
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
+
+                    break;
+                case 16:
+                    facil = qntP * 1600;
+                    medio = qntP * 3200;
+                    dificil = qntP * 4800;
+                    mortal = qntP * 7200;
+
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
+
+                    break;
+                case 17:
+                    facil = qntP * 2000;
+                    medio = qntP * 3900;
+                    dificil = qntP * 5900;
+                    mortal = qntP * 8800;
+
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
+
+                    break;
+                case 18:
+                    facil = qntP * 2100;
+                    medio = qntP * 4200;
+                    dificil = qntP * 6300;
+                    mortal = qntP * 9500;
+
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
+
+                    break;
+                case 19:
+                    facil = qntP * 2400;
+                    medio = qntP * 4900;
+                    dificil = qntP * 7300;
+                    mortal = qntP * 10900;
+
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
+
+                    break;
+                case 20:
+                    facil = qntP * 2800;
+                    medio = qntP * 5700;
+                    dificil = qntP * 8500;
+                    mortal = qntP * 12700;
+
+                    if (XP <= facil)
+                    {
+                        dificuldade = "Fácil";
+                    }
+                    else if (XP > facil & XP <= medio)
+                    {
+                        dificuldade = "Médio";
+                    }
+                    else if (XP > medio & XP <= dificil)
+                    {
+                        dificuldade = "Difícil";
+                    }
+                    else if (XP > dificil & XP <= mortal)
+                    {
+                        dificuldade = "Mortal";
+                    }
+                    else
+                    {
+                        dificuldade = "Impossível";
+                    }
+
+                    break;
+
             }
-            catch
-            {
-                return "Preenchimento invalido, preencher apenas com numeros.";
-            }
+
+            return dificuldade;
         }
     }
 }

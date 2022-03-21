@@ -5,3 +5,12 @@ C:\Projetos\Euphoria2.0\Euphoria.Servico\bin\Debug\Euphoria.Dados.pdb
 C:\Projetos\Euphoria2.0\Euphoria.Servico\obj\Debug\Euphoria.Servico.csprojResolveAssemblyReference.cache
 C:\Projetos\Euphoria2.0\Euphoria.Servico\obj\Debug\Euphoria.Servico.dll
 C:\Projetos\Euphoria2.0\Euphoria.Servico\obj\Debug\Euphoria.Servico.pdb
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Servico\bin\Debug\Euphoria.Servico.dll
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Servico\bin\Debug\Euphoria.Servico.pdb
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Servico\bin\Debug\Euphoria.Dados.dll
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Servico\bin\Debug\Euphoria.Dados.pdb
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Servico\obj\Debug\Euphoria.Servico.csproj.AssemblyReference.cache
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Servico\obj\Debug\Euphoria.Servico.csproj.CoreCompileInputs.cache
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Servico\obj\Debug\Euphoria.Servico.csproj.CopyComplete
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Servico\obj\Debug\Euphoria.Servico.dll
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Servico\obj\Debug\Euphoria.Servico.pdb
