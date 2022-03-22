@@ -62,7 +62,7 @@ namespace Euphoria2._0
             Int64 XP = int.Parse(xp);
             Int64 nvl = int.Parse(mediaNvl);
             Int64 qntP = int.Parse(qntPlayer);
-            string dificuldade = "";
+            string dificuldade;
             Int64 facil;
             Int64 medio;
             Int64 dificil;
@@ -631,6 +631,10 @@ namespace Euphoria2._0
                         dificuldade = "Impossível";
                     }
 
+                    break;
+
+                default:
+                    dificuldade = "Nível Inválido";
                     break;
 
             }
