@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Euphoria.Servico;
+﻿using Euphoria.Servico;
 using System.Data;
 
 namespace Euphoria2._0
 {
     public class Modificadores
     {
-        private ModService _service = new ModService();
-        private DataTable dt = null;
+        private readonly ModService _service = new ModService();
+        private readonly DataTable dt = null;
 
-        public DataTable preencheDtg(int tipo)
+        public DataTable PreencheDtg(int tipo)
         {
             switch (tipo)
             {

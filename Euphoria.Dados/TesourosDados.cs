@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 
 namespace Euphoria.Dados
@@ -15,7 +13,7 @@ namespace Euphoria.Dados
 
         #region Gemas
 
-        private string dados(int Dado)
+        private string Dados(int Dado)
         {
             switch (Dado)
             {
@@ -34,32 +32,36 @@ namespace Euphoria.Dados
                 default:
                     return null;
             }
- 
+
         }
 
-        public DataTable montaDtGemas(DataTable dtGemas,int tipo)
+        public DataTable MontaDtGemas(DataTable dtGemas, int tipo)
         {
             dtGemas = new DataTable();
 
             DataColumn column;
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = dados(tipo);
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = Dados(tipo)
+            };
             dtGemas.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "Descrição da Pedra";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "Descrição da Pedra"
+            };
             dtGemas.Columns.Add(column);
 
-            listGemas = preencheListaGemas(listGemas,tipo);
+            listGemas = PreencheListaGemas(listGemas, tipo);
 
             foreach (ItemTesouro item in listGemas)
             {
                 DataRow linha = dtGemas.NewRow();
-                linha[0] = item.item;
-                linha[1] = item.valor;
+                linha[0] = item.Item;
+                linha[1] = item.Valor;
 
                 dtGemas.Rows.Add(linha);
             }
@@ -67,7 +69,7 @@ namespace Euphoria.Dados
             return dtGemas;
         }
 
-        private List<ItemTesouro> preencheListaGemas(List<ItemTesouro> listItem, int tipo)
+        private List<ItemTesouro> PreencheListaGemas(List<ItemTesouro> listItem, int tipo)
         {
             listItem.Clear();
 
@@ -145,13 +147,13 @@ namespace Euphoria.Dados
 
                 default:
                     return listItem;
-            }            
+            }
         }
-        
+
         #endregion
 
         #region Objetos de Arte
-        private string dadosArte(int Dado)
+        private string DadosArte(int Dado)
         {
             switch (Dado)
             {
@@ -171,29 +173,33 @@ namespace Euphoria.Dados
 
         }
 
-        public DataTable montaDtObjetos(DataTable dtObjeto, int tipo)
+        public DataTable MontaDtObjetos(DataTable dtObjeto, int tipo)
         {
             dtObjeto = new DataTable();
 
             DataColumn column;
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = dadosArte(tipo);
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = DadosArte(tipo)
+            };
             dtObjeto.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "Objeto";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "Objeto"
+            };
             dtObjeto.Columns.Add(column);
 
-            listObjetosDeArte = preencheListaObjeto(listObjetosDeArte, tipo);
+            listObjetosDeArte = PreencheListaObjeto(listObjetosDeArte, tipo);
 
             foreach (ItemTesouro item in listObjetosDeArte)
             {
                 DataRow linha = dtObjeto.NewRow();
-                linha[0] = item.item;
-                linha[1] = item.valor;
+                linha[0] = item.Item;
+                linha[1] = item.Valor;
 
                 dtObjeto.Rows.Add(linha);
             }
@@ -201,7 +207,7 @@ namespace Euphoria.Dados
             return dtObjeto;
         }
 
-        private List<ItemTesouro> preencheListaObjeto(List<ItemTesouro> listItem, int tipo)
+        private List<ItemTesouro> PreencheListaObjeto(List<ItemTesouro> listItem, int tipo)
         {
             listItem.Clear();
 

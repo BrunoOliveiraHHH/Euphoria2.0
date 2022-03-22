@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 
 namespace Euphoria.Dados
@@ -13,57 +11,68 @@ namespace Euphoria.Dados
         private List<ItemExp> listNvl = new List<ItemExp>();
         private List<ItemExp> listDia = new List<ItemExp>();
         private List<ItemExp> listNd = new List<ItemExp>();
+        private List<ItemExp> listMulti = new List<ItemExp>();
         #endregion
 
         #region ND por Personagem
-        public DataTable montaDtDificuldade(DataTable dtDificuldade)
+        public DataTable MontaDtDificuldade(DataTable dtDificuldade)
         {
             dtDificuldade = new DataTable();
 
             DataColumn column;
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "ND";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "ND"
+            };
             dtDificuldade.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "FACIL";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "FACIL"
+            };
             dtDificuldade.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "MEDIO";
+            column = new DataColumn
+            {
+                DataType = System.Type.GetType("System.String"),
+                ColumnName = "MEDIO"
+            };
             dtDificuldade.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "DIFICIL";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "DIFICIL"
+            };
             dtDificuldade.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "MORTAL";
+            column = new DataColumn
+            {
+                DataType = System.Type.GetType("System.String"),
+                ColumnName = "MORTAL"
+            };
             dtDificuldade.Columns.Add(column);
 
-            listPersonagem = preencheListaDificuldade(listPersonagem);
+            listPersonagem = PreencheListaDificuldade(listPersonagem);
 
             foreach (ItemPersonagem personagem in listPersonagem)
             {
                 DataRow linha = dtDificuldade.NewRow();
-                linha["ND"] = personagem.nd;
-                linha["FACIL"] = personagem.facil;
-                linha["MEDIO"] = personagem.medio;
-                linha["DIFICIL"] = personagem.dificil;
-                linha["MORTAL"] = personagem.mortal;
+                linha["ND"] = personagem.Nd;
+                linha["FACIL"] = personagem.Facil;
+                linha["MEDIO"] = personagem.Medio;
+                linha["DIFICIL"] = personagem.Dificil;
+                linha["MORTAL"] = personagem.Mortal;
 
                 dtDificuldade.Rows.Add(linha);
             }
 
             return dtDificuldade;
         }
-        private List<ItemPersonagem> preencheListaDificuldade(List<ItemPersonagem> listItem)
+        private List<ItemPersonagem> PreencheListaDificuldade(List<ItemPersonagem> listItem)
         {
             listItem.Add(new ItemPersonagem("1", "25", "50", "75", "100"));
             listItem.Add(new ItemPersonagem("2", "50", "100", "150", "200"));
@@ -90,7 +99,7 @@ namespace Euphoria.Dados
         #endregion
 
         #region XP por Nvl
-        private List<ItemExp> preencheListaNvl(List<ItemExp> listItem)
+        private List<ItemExp> PreencheListaNvl(List<ItemExp> listItem)
         {
             listItem.Clear();
             listItem.Add(new ItemExp("1", "0"));
@@ -116,50 +125,33 @@ namespace Euphoria.Dados
 
             return listItem;
         }
-        public DataTable montaDtNvl(DataTable dtNvl)
+        public DataTable MontaDtNvl(DataTable dtNvl)
         {
             dtNvl = new DataTable();
 
             DataColumn column;
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "Nvl";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "Nvl"
+            };
             dtNvl.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "XP";
+            column = new DataColumn
+            {
+                DataType = System.Type.GetType("System.String"),
+                ColumnName = "XP"
+            };
             dtNvl.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "Nvl/1";
-            dtNvl.Columns.Add(column);
+            listNvl = PreencheListaNvl(listNvl);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "XP/1";
-            dtNvl.Columns.Add(column);
-
-            listNvl = preencheListaNvl(listNvl);
-
-            int j = 10;
-
-            for (int i = 0; i <= 9; i++)
+            foreach (ItemExp itemExp in listNvl)
             {
                 DataRow linha = dtNvl.NewRow();
-                linha["Nvl"] = listNvl[i].item;
-                linha["XP"] = listNvl[i].exp;
-                if (listNvl.Count > j)
-                {
-                    if (!String.IsNullOrEmpty(listNvl[j].item) && !String.IsNullOrEmpty(listNvl[j].exp))
-                    {
-                        linha["Nvl/1"] = listNvl[j].item;
-                        linha["XP/1"] = listNvl[j].exp;
-                        j++;
-                    }
-                }
+                linha["Nvl"] = itemExp.Item;
+                linha["XP"] = itemExp.Exp;
                 dtNvl.Rows.Add(linha);
 
             }
@@ -169,7 +161,7 @@ namespace Euphoria.Dados
         #endregion
 
         #region XP por Dia
-        private List<ItemExp> preencheListaDia(List<ItemExp> listItem)
+        private List<ItemExp> PreencheListaDia(List<ItemExp> listItem)
         {
             listItem.Clear();
             listItem.Add(new ItemExp("1", "300"));
@@ -195,50 +187,33 @@ namespace Euphoria.Dados
 
             return listItem;
         }
-        public DataTable montaDtDia(DataTable dtDia)
+        public DataTable MontaDtDia(DataTable dtDia)
         {
             dtDia = new DataTable();
 
             DataColumn column;
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "Nvl";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "Nvl"
+            };
             dtDia.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "XP por Dia";
+            column = new DataColumn
+            {
+                DataType = System.Type.GetType("System.String"),
+                ColumnName = "XP por Dia"
+            };
             dtDia.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "Nvl/1";
-            dtDia.Columns.Add(column);
+            listDia = PreencheListaDia(listDia);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "XP por Dia/1";
-            dtDia.Columns.Add(column);
-
-            listDia = preencheListaDia(listDia);
-
-            int j = 10;
-
-            for (int i = 0; i <= 9; i++)
+            foreach (ItemExp itemExp in listDia)
             {
                 DataRow linha = dtDia.NewRow();
-                linha["Nvl"] = listDia[i].item;
-                linha["XP por Dia"] = listDia[i].exp;
-                if (listDia.Count > j)
-                {
-                    if (!String.IsNullOrEmpty(listDia[j].item) && !String.IsNullOrEmpty(listDia[j].exp))
-                    {
-                        linha["Nvl/1"] = listDia[j].item;
-                        linha["XP por Dia/1"] = listDia[j].exp;
-                        j++;
-                    }
-                }
+                linha["Nvl"] = itemExp.Item;
+                linha["XP por Dia"] = itemExp.Exp;
                 dtDia.Rows.Add(linha);
 
             }
@@ -248,80 +223,43 @@ namespace Euphoria.Dados
         #endregion
 
         #region XP por ND
-        public DataTable montaDtNd(DataTable dtNd)
+        public DataTable MontaDtNd(DataTable dtNd)
         {
             dtNd = new DataTable();
 
             DataColumn column;
 
-            #region Colunas
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "ND";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "ND"
+            };
             dtNd.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "XP";
+            column = new DataColumn
+            {
+                DataType = System.Type.GetType("System.String"),
+                ColumnName = "XP"
+            };
             dtNd.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "ND/1";
-            dtNd.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "XP/1";
-            dtNd.Columns.Add(column);
+            listNd = PreencheListaND(listNd);
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "ND/2";
-            dtNd.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "XP/2";
-            dtNd.Columns.Add(column);
-            listNd = preencheListaND(listNd);
-            #endregion
-
-            int j = 12;
-            int k = 24;
-
-            for (int i = 0; i <= 11; i++)
+            foreach (ItemExp itemExp in listNd)
             {
                 DataRow linha = dtNd.NewRow();
-                linha["ND"] = listNd[i].item;
-                linha["XP"] = listNd[i].exp;
-                if (listNd.Count > j)
-                {
-                    if (!String.IsNullOrEmpty(listNd[j].item) && !String.IsNullOrEmpty(listNd[j].exp))
-                    {
-                        linha["ND/1"] = listNd[j].item;
-                        linha["XP/1"] = listNd[j].exp;
-                        j++;
-                    }
-                }
-                if (listNd.Count > k)
-                {
-                    if (!String.IsNullOrEmpty(listNd[k].item) && !String.IsNullOrEmpty(listNd[k].exp))
-                    {
-                        linha["ND/2"] = listNd[k].item;
-                        linha["XP/2"] = listNd[k].exp;
-                        k++;
-                    }
-                }
+                linha["ND"] = itemExp.Item;
+                linha["XP"] = itemExp.Exp;
                 dtNd.Rows.Add(linha);
             }
 
             return dtNd;
         }
-        private List<ItemExp> preencheListaND(List<ItemExp> listItem)
+        private List<ItemExp> PreencheListaND(List<ItemExp> listItem)
         {
             listItem.Clear();
-            listItem.Add(new ItemExp("0"  ,"0 ou 10"));
+            listItem.Add(new ItemExp("0", "0 ou 10"));
             listItem.Add(new ItemExp("1/8", "25"));
             listItem.Add(new ItemExp("1/4", "50"));
             listItem.Add(new ItemExp("1/2", "100"));
@@ -360,33 +298,34 @@ namespace Euphoria.Dados
             return listItem;
         }
         #endregion
-    
+
         #region Multi de XP
-        public DataTable montaDtMulti(DataTable dtMulti)
+        public DataTable MontaDtMulti(DataTable dtMulti)
         {
             dtMulti = new DataTable();
 
             DataColumn column;
-
-            #region Colunas
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "Qtd";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "Qtd"
+            };
             dtMulti.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Multi";
+            column = new DataColumn
+            {
+                DataType = System.Type.GetType("System.String"),
+                ColumnName = "Multi"
+            };
             dtMulti.Columns.Add(column);
 
-            listNd = preencheListaMulti(listNd);
-            #endregion
+            listMulti = PreencheListaMulti(listMulti);
 
-            for (int i = 0; i <= 5; i++)
+            foreach (ItemExp itemExp in listMulti)
             {
                 DataRow linha = dtMulti.NewRow();
-                linha["Qtd"] = listNd[i].item;
-                linha["Multi"] = listNd[i].exp;
+                linha["Qtd"] = itemExp.Item;
+                linha["Multi"] = itemExp.Exp;
                 dtMulti.Rows.Add(linha);
             }
 
@@ -395,7 +334,7 @@ namespace Euphoria.Dados
 
             return dtMulti;
         }
-        private List<ItemExp> preencheListaMulti(List<ItemExp> listItem)
+        private List<ItemExp> PreencheListaMulti(List<ItemExp> listItem)
         {
             listItem.Clear();
             listItem.Add(new ItemExp("1", "x1"));

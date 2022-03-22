@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Euphoria.Dados;
+﻿using Euphoria.Dados;
 using System.Data;
 
 namespace Euphoria.Servico
 {
     public class TesouroService
     {
-        TesourosDados _dados = new TesourosDados();
+        private readonly TesourosDados _dados = new TesourosDados();
 
-        public DataTable montaDtGemas(DataTable dtGemas, int tipo)
+        public DataTable MontaDtGemas(DataTable dtGemas, int tipo)
         {
-            return _dados.montaDtGemas(dtGemas,tipo);
+            return _dados.MontaDtGemas(dtGemas, tipo);
         }
 
-        public DataTable montaDtObjetos(DataTable dtObjeto, int tipo)
+        public DataTable MontaDtObjetos(DataTable dtObjeto, int tipo)
         {
-            return _dados.montaDtObjetos(dtObjeto, tipo);
+            return _dados.MontaDtObjetos(dtObjeto, tipo);
         }
     }
 }

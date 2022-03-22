@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Euphoria2._0
@@ -16,6 +10,7 @@ namespace Euphoria2._0
         private readonly Experiencia experiencia = new Experiencia();
         private readonly Modificadores modificadores = new Modificadores();
         private readonly Tesouros tesouro = new Tesouros();
+        private readonly Armadilhas armadilhas = new Armadilhas();
         #endregion
 
         #region Methods
@@ -27,29 +22,15 @@ namespace Euphoria2._0
 
         private void InicializarTela()
         {
-            panel1.Visible = false;            
+            panel1.Visible = false;
+            panel2.Visible = false;
         }
 
         private void IniciaDtg()
         {
-            DataTable dt = new DataTable();
-            DataColumn column;
-            String Linha = "Utilizar os Menus 'Experência','Modificadores' e 'Tesouros', o Resultado irá aparecer aqui";
-
-            column = new DataColumn
-            {
-                DataType = Type.GetType("System.String"),
-                ColumnName = "Info"
-            };
-            dt.Columns.Add(column);
-
-            DataRow linha = dt.NewRow();
-            linha["Info"] = Linha;
-            dt.Rows.Add(linha);
-
             if (dtgFront.DataSource == null)
             {
-                dtgFront.DataSource = dt;                
+                dtgFront.DataSource = experiencia.PreencheDtg(5); ;
             }
         }
 
@@ -78,6 +59,7 @@ namespace Euphoria2._0
         private void CalculoMenu_Click(object sender, EventArgs e)
         {
             panel1.Visible = true;
+            panel2.Visible = false;
             LimpaTexto();
             IniciaDtg();
         }
@@ -107,60 +89,68 @@ namespace Euphoria2._0
             {
                 lblDificuldade.Text = String.Empty;
             }
-           lblDificuldade.Text = calculo.CalcularEncontro(txtTotalEncontro.Text.ToString(), txtMediaNvl.Text.ToString(), txtQntdJogadoresEncounter.Text.ToString());
+            lblDificuldade.Text = calculo.CalcularEncontro(txtTotalEncontro.Text.ToString(), txtMediaNvl.Text.ToString(), txtQntdJogadoresEncounter.Text.ToString());
         }
         #endregion
 
         #region Experiencia
         private void ExpPorNDSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = experiencia.preencheDtg(1);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = experiencia.PreencheDtg(1);
         }
 
         private void ExpPorNvlSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = experiencia.preencheDtg(2);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = experiencia.PreencheDtg(2);
         }
 
         private void ExpPorDifSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = experiencia.preencheDtg(3);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = experiencia.PreencheDtg(3);
         }
 
         private void ExpPorDiaSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = experiencia.preencheDtg(4);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = experiencia.PreencheDtg(4);
         }
 
 
         private void MultiExpSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = experiencia.preencheDtg(5);            
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = experiencia.PreencheDtg(5);
         }
         #endregion
 
         #region Modificadores
         private void ModPorNDSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = modificadores.preencheDtg(1);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = modificadores.PreencheDtg(1);
         }
 
         private void ModPorNvlSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = modificadores.preencheDtg(2);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = modificadores.PreencheDtg(2);
         }
 
         private void ModPorHabSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = modificadores.preencheDtg(3);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = modificadores.PreencheDtg(3);
         }
         #endregion
 
@@ -169,70 +159,81 @@ namespace Euphoria2._0
         #region Gemas
         private void G10PoSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = tesouro.preencheDtgGemas(1);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = tesouro.PreencheDtgGemas(1);
         }
 
         private void G50PoSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = tesouro.preencheDtgGemas(2);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = tesouro.PreencheDtgGemas(2);
         }
 
         private void G100PoSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = tesouro.preencheDtgGemas(3);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = tesouro.PreencheDtgGemas(3);
         }
 
         private void G500PoSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = tesouro.preencheDtgGemas(4);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = tesouro.PreencheDtgGemas(4);
         }
 
         private void G1000PoSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = tesouro.preencheDtgGemas(5);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = tesouro.PreencheDtgGemas(5);
         }
 
         private void G5000PoSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = tesouro.preencheDtgGemas(6);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = tesouro.PreencheDtgGemas(6);
         }
         #endregion
 
         #region Obejtos de Arte
         private void ODe25PoSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = tesouro.preencheDtgObjetos(1);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = tesouro.PreencheDtgObjetos(1);
         }
 
         private void ODe250PoSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = tesouro.preencheDtgObjetos(2);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = tesouro.PreencheDtgObjetos(2);
         }
 
         private void ODe750PoSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = tesouro.preencheDtgObjetos(3);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = tesouro.PreencheDtgObjetos(3);
         }
 
         private void ODe2500PoSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = tesouro.preencheDtgObjetos(4);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = tesouro.PreencheDtgObjetos(4);
         }
 
         private void ODe7500PoSubMenu_Click(object sender, EventArgs e)
         {
-            panel1.Visible = true;
-            dtgFront.DataSource = tesouro.preencheDtgObjetos(5);
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = tesouro.PreencheDtgObjetos(5);
         }
         #endregion
 
@@ -246,5 +247,14 @@ namespace Euphoria2._0
                 e.Handled = true;
             }
         }
+
+        #region Armadilhas
+        private void ArmadilhasMenu_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = true;
+            panel1.Visible = false;
+            dtgArmad.DataSource = armadilhas.PreencheDtg();
+        }
+        #endregion
     }
 }

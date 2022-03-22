@@ -1,31 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Euphoria.Dados
+﻿namespace Euphoria.Dados
 {
     public class ItemTesouro
     {
-       private string Item;
-        private string Valor;
+        private string item;
+        private string valor;
 
-        public string item
+        public string Item
         {
-            get { return Item; }
-            set { Item = value; }
+            get { return item; }
+            set { item = value; }
         }
 
-        public string valor
+        public string Valor
         {
-            get { return Valor; }
-            set { Valor = value; }
+            get { return valor; }
+            set { valor = value; }
         }
 
-        public ItemTesouro(string Item, string Valor)
+        public ItemTesouro(string item, string valor)
         {
-            valor = Valor;
-            item = Item;
+            Valor = valor;
+            Item = item;
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Data;
 
 namespace Euphoria.Dados
@@ -13,57 +11,39 @@ namespace Euphoria.Dados
         private List<ItemModificador> listHab = new List<ItemModificador>();
 
         #region Mod. Por Nvl
-        public DataTable montaDtNvl(DataTable dtNvl)
+        public DataTable MontaDtNvl(DataTable dtNvl)
         {
             dtNvl = new DataTable();
 
             DataColumn column;
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "Nvl";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "Nvl"
+            };
             dtNvl.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Mod. BP";
+            column = new DataColumn
+            {
+                DataType = System.Type.GetType("System.String"),
+                ColumnName = "Mod. BP"
+            };
             dtNvl.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "Nvl/1";
-            dtNvl.Columns.Add(column);
+            listNvl = PreencheListaNvl(listNvl);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Mod. BP/1";
-            dtNvl.Columns.Add(column);
-
-            listNvl = preencheListaNvl(listNvl);
-
-            int j = 10;
-
-            for (int i = 0; i <= 9; i++)
+            foreach (ItemModificador itemModificador in listNvl)
             {
                 DataRow linha = dtNvl.NewRow();
-                linha["Nvl"] = listNvl[i].item;
-                linha["Mod. BP"] = listNvl[i].mod;
-                if (listNvl.Count > j)
-                {
-                    if (!String.IsNullOrEmpty(listNvl[j].item) && !String.IsNullOrEmpty(listNvl[j].mod))
-                    {
-                        linha["Nvl/1"] = listNvl[j].item;
-                        linha["Mod. BP/1"] = listNvl[j].mod;
-                        j++;
-                    }
-                }
+                linha["Nvl"] = itemModificador.Item;
+                linha["Mod. BP"] = itemModificador.Mod;
                 dtNvl.Rows.Add(linha);
-
             }
 
             return dtNvl;
         }
-        private List<ItemModificador> preencheListaNvl(List<ItemModificador> listItem)
+        private List<ItemModificador> PreencheListaNvl(List<ItemModificador> listItem)
         {
             listItem.Clear();
             listItem.Add(new ItemModificador("1", "+2"));
@@ -92,77 +72,39 @@ namespace Euphoria.Dados
         #endregion
 
         #region Mod. Por ND
-        public DataTable montaDtNd(DataTable dtNd)
+        public DataTable MontaDtNd(DataTable dtNd)
         {
             dtNd = new DataTable();
 
             DataColumn column;
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "ND";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "ND"
+            };
             dtNd.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Mod. BP";
+            column = new DataColumn
+            {
+                DataType = System.Type.GetType("System.String"),
+                ColumnName = "Mod. BP"
+            };
             dtNd.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "ND/1";
-            dtNd.Columns.Add(column);
+            listNd = PreencheLista(listNd);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Mod. BP/1";
-            dtNd.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "ND/2";
-            dtNd.Columns.Add(column);
-
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Mod. BP/2";
-            dtNd.Columns.Add(column);
-
-            listNd = preencheLista(listNd);
-
-            int j = 12;
-            int k = 24;
-
-
-            for (int i = 0; i <= 11; i++)
+            foreach (ItemModificador itemModificador in listNd)
             {
                 DataRow linha = dtNd.NewRow();
-                linha["ND"] = listNd[i].item;
-                linha["Mod. BP"] = listNd[i].mod;
-                if (listNd.Count > j)
-                {
-                    if (!String.IsNullOrEmpty(listNd[j].mod) && !String.IsNullOrEmpty(listNd[j].item))
-                    {
-                        linha["ND/1"] = listNd[j].item;
-                        linha["Mod. BP/1"] = listNd[j].mod;
-                        j++;
-                    }
-                }
-                if (listNd.Count > k)
-                {
-                    if (!String.IsNullOrEmpty(listNd[k].mod) && !String.IsNullOrEmpty(listNd[k].item))
-                    {
-                        linha["ND/2"] = listNd[k].item;
-                        linha["Mod. BP/2"] = listNd[k].mod;
-                        k++;
-                    }
-                }
+                linha["ND"] = itemModificador.Item;
+                linha["Mod. BP"] = itemModificador.Mod;
                 dtNd.Rows.Add(linha);
-
             }
+
             return dtNd;
         }
-        private List<ItemModificador> preencheLista(List<ItemModificador> listItem)
+        private List<ItemModificador> PreencheLista(List<ItemModificador> listItem)
         {
             listItem.Clear();
             listItem.Add(new ItemModificador("0", "+2"));
@@ -205,36 +147,40 @@ namespace Euphoria.Dados
         #endregion
 
         #region Mod. Po Valor de Habilidade
-        public DataTable montaDtHab(DataTable dtHab)
+        public DataTable MontaDtHab(DataTable dtHab)
         {
             dtHab = new DataTable();
 
             DataColumn column;
 
-            column = new DataColumn();
-            column.DataType = Type.GetType("System.String");
-            column.ColumnName = "Valor de Habilidade";
+            column = new DataColumn
+            {
+                DataType = Type.GetType("System.String"),
+                ColumnName = "Valor de Habilidade"
+            };
             dtHab.Columns.Add(column);
 
-            column = new DataColumn();
-            column.DataType = System.Type.GetType("System.String");
-            column.ColumnName = "Mod.";
+            column = new DataColumn
+            {
+                DataType = System.Type.GetType("System.String"),
+                ColumnName = "Mod."
+            };
             dtHab.Columns.Add(column);
 
-            listHab = preencheListaHab(listHab);
+            listHab = PreencheListaHab(listHab);
 
             foreach (ItemModificador item in listHab)
             {
                 DataRow linha = dtHab.NewRow();
-                linha["Valor de Habilidade"] = item.item;
-                linha["Mod."] = item.mod;
+                linha["Valor de Habilidade"] = item.Item;
+                linha["Mod."] = item.Mod;
                 dtHab.Rows.Add(linha);
 
             }
 
             return dtHab;
         }
-        private List<ItemModificador> preencheListaHab(List<ItemModificador> listItem)
+        private List<ItemModificador> PreencheListaHab(List<ItemModificador> listItem)
         {
             listItem.Clear();
             listItem.Add(new ItemModificador("1", "-5"));

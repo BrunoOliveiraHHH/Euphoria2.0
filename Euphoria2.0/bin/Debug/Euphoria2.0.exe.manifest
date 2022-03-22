@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Euphoria.Dados.dll" size="31744">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Euphoria.Dados.dll" size="53248">
       <assemblyIdentity name="Euphoria.Dados" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>knlrvZgc8zd9uZSvbTbVae8S+d7hijiLZSABTBK4DyM=</dsig:DigestValue>
+        <dsig:DigestValue>Fdi0NChb4bbMeQVfnSKp/ybUcQwGuniwIckYYxIbJHM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,19 +61,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GsoI1xhPPeSd0LErhS7BG16SZ111IplVLXVCAYDK0sI=</dsig:DigestValue>
+        <dsig:DigestValue>h4W7JQeUPFLHPp0ExbcUPe8uBCI8jaiZV8F8shuz+A0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Euphoria2.0.exe" size="306176">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Euphoria2.0.exe" size="307712">
       <assemblyIdentity name="Euphoria2.0" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FtnCULCigbQXHVAOGJJ0pOV218bkQo6y+eZveAuMDng=</dsig:DigestValue>
+        <dsig:DigestValue>CfaT3rDXRr76PQrWchsTw/LDBdUH/FIw2b80euNGgoE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

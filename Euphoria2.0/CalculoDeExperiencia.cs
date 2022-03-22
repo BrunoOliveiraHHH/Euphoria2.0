@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Euphoria.Dados;
+﻿using Euphoria.Dados;
+using System;
 
 namespace Euphoria2._0
 {

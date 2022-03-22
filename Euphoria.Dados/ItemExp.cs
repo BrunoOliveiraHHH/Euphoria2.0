@@ -1,31 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Euphoria.Dados
 {
     public class ItemExp
     {
-        private String Item;
-        private String Exp;
+        private String item;
+        private String exp;
 
-        public String item
+        public String Item
         {
-            get { return Item; }
-            set { Item = value; }
+            get { return item; }
+            set { item = value; }
         }
 
-        public String exp
+        public String Exp
         {
-            get { return Exp; }
-            set { Exp = value; }
+            get { return exp; }
+            set { exp = value; }
         }
 
-        public ItemExp(String Item, String XP)
+        public ItemExp(String item, String XP)
         {
-            exp = XP;
-            item = Item;
+            Exp = XP;
+            Item = item;
         }
     }
 }

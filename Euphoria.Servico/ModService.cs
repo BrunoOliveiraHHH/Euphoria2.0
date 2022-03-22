@@ -1,29 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Euphoria.Dados;
+﻿using Euphoria.Dados;
 using System.Data;
 
 namespace Euphoria.Servico
 {
     public class ModService
     {
-        private ModificadoresDados _dados = new ModificadoresDados();
+        private readonly ModificadoresDados _dados = new ModificadoresDados();
 
         public DataTable ModPorND(DataTable dtNd)
         {
-            return _dados.montaDtNd(dtNd);
+            return _dados.MontaDtNd(dtNd);
         }
 
         public DataTable ModPorHab(DataTable dtHab)
         {
-            return _dados.montaDtHab(dtHab);
+            return _dados.MontaDtHab(dtHab);
         }
 
         public DataTable ModPorNvl(DataTable dtNvl)
         {
-            return _dados.montaDtNvl(dtNvl);
+            return _dados.MontaDtNvl(dtNvl);
         }
     }
 }

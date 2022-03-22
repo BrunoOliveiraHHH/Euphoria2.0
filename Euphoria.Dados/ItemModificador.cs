@@ -1,31 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Euphoria.Dados
+﻿namespace Euphoria.Dados
 {
     public class ItemModificador
     {
-        private string Item;
-        private string Mod;
+        private string item;
+        private string mod;
 
-        public string item
+        public string Item
         {
-            get { return Item; }
-            set { Item = value; }
+            get { return item; }
+            set { item = value; }
         }
 
-        public string mod
+        public string Mod
         {
-            get { return Mod; }
-            set { Mod = value; }
+            get { return mod; }
+            set { mod = value; }
         }
 
-        public ItemModificador(string Item, string Mod)
+        public ItemModificador(string item, string mod)
         {
-            mod = Mod;
-            item = Item;
+            Mod = mod;
+            Item = item;
         }
 
 

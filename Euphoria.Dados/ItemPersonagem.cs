@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Euphoria.Dados
 {
@@ -13,29 +10,29 @@ namespace Euphoria.Dados
         private String DIFICIL;
         private String MORTAL;
 
-        public string nd
+        public string Nd
         {
             get { return ND; }
             set { ND = value; }
         }
-        public string facil
+        public string Facil
         {
             get { return FACIL; }
             set { FACIL = value; }
         }
-        public string medio
+        public string Medio
         {
             get { return MEDIO; }
             set { MEDIO = value; }
 
         }
-        public string dificil
+        public string Dificil
         {
             get { return DIFICIL; }
             set { DIFICIL = value; }
 
         }
-        public string mortal
+        public string Mortal
         {
             get { return MORTAL; }
             set { MORTAL = value; }
@@ -43,11 +40,11 @@ namespace Euphoria.Dados
         }
         public ItemPersonagem(String ND, String FACIL, String MEDIO, String DIFICIL, String MORTAL)
         {
-            nd = ND;
-            facil = FACIL;
-            medio = MEDIO;
-            dificil = DIFICIL;
-            mortal = MORTAL;
+            Nd = ND;
+            Facil = FACIL;
+            Medio = MEDIO;
+            Dificil = DIFICIL;
+            Mortal = MORTAL;
         }
     }
 }

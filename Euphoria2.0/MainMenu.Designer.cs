@@ -31,6 +31,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.homeMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -59,10 +62,13 @@
             this.oDe2500PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.oDe7500PoSubMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.calculoMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ArmadilhasMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dtgFront = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtQntdJogadoresEncounter = new System.Windows.Forms.TextBox();
             this.lblDificuldade = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -86,8 +92,9 @@
             this.txtQtdMon = new System.Windows.Forms.TextBox();
             this.txtQtdXP = new System.Windows.Forms.TextBox();
             this.lblqtdXP = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtQntdJogadoresEncounter = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dtgArmad = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -95,6 +102,9 @@
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgArmad)).BeginInit();
             this.SuspendLayout();
             // 
             // homeMenu
@@ -108,12 +118,14 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.LightCoral;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.homeMenu,
             this.expMenu,
             this.modMenu,
             this.tesouroMenu,
-            this.calculoMenu});
+            this.calculoMenu,
+            this.ArmadilhasMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
@@ -333,6 +345,14 @@
             this.calculoMenu.Text = "Cálculo de Experiência de Encontro";
             this.calculoMenu.Click += new System.EventHandler(this.CalculoMenu_Click);
             // 
+            // ArmadilhasMenu
+            // 
+            this.ArmadilhasMenu.ForeColor = System.Drawing.Color.Black;
+            this.ArmadilhasMenu.Name = "ArmadilhasMenu";
+            this.ArmadilhasMenu.Size = new System.Drawing.Size(79, 20);
+            this.ArmadilhasMenu.Text = "Armadilhas";
+            this.ArmadilhasMenu.Click += new System.EventHandler(this.ArmadilhasMenu_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -351,9 +371,9 @@
             // 
             this.groupBox4.Controls.Add(this.dtgFront);
             this.groupBox4.ForeColor = System.Drawing.Color.White;
-            this.groupBox4.Location = new System.Drawing.Point(527, 248);
+            this.groupBox4.Location = new System.Drawing.Point(469, 248);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(404, 230);
+            this.groupBox4.Size = new System.Drawing.Size(462, 230);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tabelas de Estatísticas";
@@ -409,7 +429,7 @@
             this.dtgFront.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.LightCoral;
             this.dtgFront.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
             this.dtgFront.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgFront.Size = new System.Drawing.Size(398, 211);
+            this.dtgFront.Size = new System.Drawing.Size(456, 211);
             this.dtgFront.TabIndex = 3;
             // 
             // groupBox3
@@ -424,12 +444,34 @@
             this.groupBox3.Controls.Add(this.txtTotalEncontro);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.ForeColor = System.Drawing.Color.White;
-            this.groupBox3.Location = new System.Drawing.Point(527, 3);
+            this.groupBox3.Location = new System.Drawing.Point(469, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(404, 230);
+            this.groupBox3.Size = new System.Drawing.Size(462, 230);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Experiência por Quantidade de Jogadores";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.No;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(89, 81);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(181, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Quantidade de Jogadores: ";
+            // 
+            // txtQntdJogadoresEncounter
+            // 
+            this.txtQntdJogadoresEncounter.Location = new System.Drawing.Point(277, 80);
+            this.txtQntdJogadoresEncounter.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtQntdJogadoresEncounter.Name = "txtQntdJogadoresEncounter";
+            this.txtQntdJogadoresEncounter.Size = new System.Drawing.Size(103, 20);
+            this.txtQntdJogadoresEncounter.TabIndex = 15;
+            this.txtQntdJogadoresEncounter.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQtdXP_KeyPress);
             // 
             // lblDificuldade
             // 
@@ -523,7 +565,7 @@
             this.groupBox2.ForeColor = System.Drawing.Color.White;
             this.groupBox2.Location = new System.Drawing.Point(3, 248);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(518, 230);
+            this.groupBox2.Size = new System.Drawing.Size(460, 230);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Experiência por Quantidade de Jogadores";
@@ -621,7 +663,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(518, 230);
+            this.groupBox1.Size = new System.Drawing.Size(460, 230);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Experiência por Quantidade de Monstro";
@@ -707,26 +749,79 @@
             this.lblqtdXP.TabIndex = 6;
             this.lblqtdXP.Text = "Quantidade Total de Exp dos Monstros: ";
             // 
-            // label3
+            // panel2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.No;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(89, 81);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(181, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Quantidade de Jogadores: ";
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.groupBox5);
+            this.panel2.Location = new System.Drawing.Point(169, 54);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(939, 492);
+            this.panel2.TabIndex = 15;
             // 
-            // txtQntdJogadoresEncounter
+            // groupBox5
             // 
-            this.txtQntdJogadoresEncounter.Location = new System.Drawing.Point(277, 80);
-            this.txtQntdJogadoresEncounter.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtQntdJogadoresEncounter.Name = "txtQntdJogadoresEncounter";
-            this.txtQntdJogadoresEncounter.Size = new System.Drawing.Size(103, 20);
-            this.txtQntdJogadoresEncounter.TabIndex = 15;
+            this.groupBox5.Controls.Add(this.dtgArmad);
+            this.groupBox5.ForeColor = System.Drawing.Color.White;
+            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(939, 492);
+            this.groupBox5.TabIndex = 0;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Armadilhas";
+            // 
+            // dtgArmad
+            // 
+            this.dtgArmad.AllowUserToAddRows = false;
+            this.dtgArmad.AllowUserToDeleteRows = false;
+            this.dtgArmad.AllowUserToResizeColumns = false;
+            this.dtgArmad.AllowUserToResizeRows = false;
+            this.dtgArmad.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgArmad.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgArmad.BackgroundColor = System.Drawing.Color.LightSalmon;
+            this.dtgArmad.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgArmad.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dtgArmad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgArmad.Cursor = System.Windows.Forms.Cursors.IBeam;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgArmad.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dtgArmad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgArmad.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtgArmad.GridColor = System.Drawing.Color.LightSalmon;
+            this.dtgArmad.Location = new System.Drawing.Point(3, 16);
+            this.dtgArmad.MultiSelect = false;
+            this.dtgArmad.Name = "dtgArmad";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgArmad.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtgArmad.RowHeadersVisible = false;
+            this.dtgArmad.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dtgArmad.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtgArmad.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Firebrick;
+            this.dtgArmad.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgArmad.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dtgArmad.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.LightCoral;
+            this.dtgArmad.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgArmad.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgArmad.Size = new System.Drawing.Size(933, 473);
+            this.dtgArmad.TabIndex = 4;
             // 
             // MainMenu
             // 
@@ -737,6 +832,7 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -755,6 +851,9 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgArmad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -818,5 +917,9 @@
         private System.Windows.Forms.ToolStripMenuItem oDe7500PoSubMenu;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtQntdJogadoresEncounter;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ToolStripMenuItem ArmadilhasMenu;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView dtgArmad;
     }
 }

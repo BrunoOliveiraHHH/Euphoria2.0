@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArmadilhasService.cs" />
     <Compile Include="ExpService.cs" />
     <Compile Include="ModService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
