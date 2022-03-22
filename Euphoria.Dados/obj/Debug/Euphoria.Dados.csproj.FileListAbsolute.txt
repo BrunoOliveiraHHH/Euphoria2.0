@@ -3,3 +3,9 @@ C:\Projetos\Euphoria2.0\Euphoria.Dados\bin\Debug\Euphoria.Dados.pdb
 C:\Projetos\Euphoria2.0\Euphoria.Dados\obj\Debug\Euphoria.Dados.dll
 C:\Projetos\Euphoria2.0\Euphoria.Dados\obj\Debug\Euphoria.Dados.pdb
 C:\Projetos\Euphoria2.0\Euphoria.Dados\obj\Debug\Euphoria.Dados.csprojResolveAssemblyReference.cache
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Dados\bin\Debug\Euphoria.Dados.dll
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Dados\bin\Debug\Euphoria.Dados.pdb
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Dados\obj\Debug\Euphoria.Dados.csproj.AssemblyReference.cache
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Dados\obj\Debug\Euphoria.Dados.csproj.CoreCompileInputs.cache
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Dados\obj\Debug\Euphoria.Dados.dll
+C:\Users\320183944\Desktop\MyProjects\Euphoria2.0\Euphoria.Dados\obj\Debug\Euphoria.Dados.pdb
