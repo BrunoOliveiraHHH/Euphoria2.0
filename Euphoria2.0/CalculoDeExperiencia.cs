@@ -9,8 +9,8 @@ namespace Euphoria2._0
 
         public string CalculoXP(string xp, string qtdMonstro)
         {
-            Int64 XP = int.Parse(xp);
-            Int64 Monstro = int.Parse(qtdMonstro);
+            Int64 XP = Int64.Parse(xp);
+            Int64 Monstro = Int64.Parse(qtdMonstro);
             double total;
             if (Monstro == 2)
             {
@@ -43,8 +43,8 @@ namespace Euphoria2._0
         public string CalculoPlayer(string xp, string qtdPlayer)
         {
 
-            Int64 XP = int.Parse(xp);
-            Int64 player = int.Parse(qtdPlayer);
+            Int64 XP = Int64.Parse(xp);
+            Int64 player = Int64.Parse(qtdPlayer);
             double total;
 
             total = XP / player;
@@ -56,9 +56,9 @@ namespace Euphoria2._0
         public string CalcularEncontro(string xp, string mediaNvl, string qntPlayer)
         {
 
-            Int64 XP = int.Parse(xp);
-            Int64 nvl = int.Parse(mediaNvl);
-            Int64 qntP = int.Parse(qntPlayer);
+            Int64 XP = Int64.Parse(xp);
+            Int64 nvl = Int64.Parse(mediaNvl);
+            Int64 qntP = Int64.Parse(qntPlayer);
             string dificuldade;
             Int64 facil;
             Int64 medio;

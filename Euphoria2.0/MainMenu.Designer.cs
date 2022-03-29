@@ -34,6 +34,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.homeMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -95,6 +98,23 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dtgArmad = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtAC = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtHP = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtInit = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.btnNew = new System.Windows.Forms.Button();
+            this.dtgCRUD = new System.Windows.Forms.DataGridView();
+            this.initTrackerMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -105,6 +125,9 @@
             this.panel2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgArmad)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCRUD)).BeginInit();
             this.SuspendLayout();
             // 
             // homeMenu
@@ -125,7 +148,8 @@
             this.modMenu,
             this.tesouroMenu,
             this.calculoMenu,
-            this.ArmadilhasMenu});
+            this.ArmadilhasMenu,
+            this.initTrackerMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
@@ -762,12 +786,12 @@
             // 
             this.groupBox5.Controls.Add(this.dtgArmad);
             this.groupBox5.ForeColor = System.Drawing.Color.White;
-            this.groupBox5.Location = new System.Drawing.Point(0, 0);
+            this.groupBox5.Location = new System.Drawing.Point(0, 3);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(939, 492);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Armadilhas";
+            this.groupBox5.Text = "Tabelas";
             // 
             // dtgArmad
             // 
@@ -823,6 +847,249 @@
             this.dtgArmad.Size = new System.Drawing.Size(933, 473);
             this.dtgArmad.TabIndex = 4;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.groupBox6);
+            this.panel3.Location = new System.Drawing.Point(170, 54);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(939, 492);
+            this.panel3.TabIndex = 16;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.btnClear);
+            this.groupBox6.Controls.Add(this.btnDelete);
+            this.groupBox6.Controls.Add(this.btnUpdate);
+            this.groupBox6.Controls.Add(this.btnSave);
+            this.groupBox6.Controls.Add(this.label14);
+            this.groupBox6.Controls.Add(this.txtAC);
+            this.groupBox6.Controls.Add(this.label13);
+            this.groupBox6.Controls.Add(this.txtHP);
+            this.groupBox6.Controls.Add(this.label12);
+            this.groupBox6.Controls.Add(this.txtInit);
+            this.groupBox6.Controls.Add(this.label11);
+            this.groupBox6.Controls.Add(this.txtName);
+            this.groupBox6.Controls.Add(this.btnNew);
+            this.groupBox6.Controls.Add(this.dtgCRUD);
+            this.groupBox6.ForeColor = System.Drawing.Color.White;
+            this.groupBox6.Location = new System.Drawing.Point(0, 1);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(939, 492);
+            this.groupBox6.TabIndex = 0;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Tabelas";
+            // 
+            // btnClear
+            // 
+            this.btnClear.ForeColor = System.Drawing.Color.Black;
+            this.btnClear.Location = new System.Drawing.Point(480, 164);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(212, 23);
+            this.btnClear.TabIndex = 31;
+            this.btnClear.Text = "Limpar Lista";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.ForeColor = System.Drawing.Color.Black;
+            this.btnDelete.Location = new System.Drawing.Point(594, 112);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(98, 45);
+            this.btnDelete.TabIndex = 30;
+            this.btnDelete.Text = "Excluir";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Location = new System.Drawing.Point(594, 59);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(98, 46);
+            this.btnUpdate.TabIndex = 29;
+            this.btnUpdate.Text = "Atualizar";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.ForeColor = System.Drawing.Color.Black;
+            this.btnSave.Location = new System.Drawing.Point(480, 112);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(101, 45);
+            this.btnSave.TabIndex = 28;
+            this.btnSave.Text = "Salvar";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Cursor = System.Windows.Forms.Cursors.No;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(203, 154);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(144, 17);
+            this.label14.TabIndex = 27;
+            this.label14.Text = "Classe de Armadura: ";
+            // 
+            // txtAC
+            // 
+            this.txtAC.Location = new System.Drawing.Point(352, 152);
+            this.txtAC.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtAC.Name = "txtAC";
+            this.txtAC.Size = new System.Drawing.Size(103, 20);
+            this.txtAC.TabIndex = 26;
+            this.txtAC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQtdXP_KeyPress);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Cursor = System.Windows.Forms.Cursors.No;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(235, 128);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(112, 17);
+            this.label13.TabIndex = 25;
+            this.label13.Text = "Pontos de Vida: ";
+            // 
+            // txtHP
+            // 
+            this.txtHP.Location = new System.Drawing.Point(352, 126);
+            this.txtHP.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtHP.Name = "txtHP";
+            this.txtHP.Size = new System.Drawing.Size(103, 20);
+            this.txtHP.TabIndex = 24;
+            this.txtHP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQtdXP_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Cursor = System.Windows.Forms.Cursors.No;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(277, 102);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(70, 17);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "Iniciativa: ";
+            // 
+            // txtInit
+            // 
+            this.txtInit.Location = new System.Drawing.Point(352, 100);
+            this.txtInit.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtInit.Name = "txtInit";
+            this.txtInit.Size = new System.Drawing.Size(103, 20);
+            this.txtInit.TabIndex = 22;
+            this.txtInit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtQtdXP_KeyPress);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Cursor = System.Windows.Forms.Cursors.No;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(294, 76);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(53, 17);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Nome: ";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(352, 74);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(103, 20);
+            this.txtName.TabIndex = 20;
+            // 
+            // btnNew
+            // 
+            this.btnNew.ForeColor = System.Drawing.Color.Black;
+            this.btnNew.Location = new System.Drawing.Point(480, 59);
+            this.btnNew.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(101, 46);
+            this.btnNew.TabIndex = 17;
+            this.btnNew.Text = "Novo";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.BtnNew_Click);
+            // 
+            // dtgCRUD
+            // 
+            this.dtgCRUD.AllowUserToAddRows = false;
+            this.dtgCRUD.AllowUserToDeleteRows = false;
+            this.dtgCRUD.AllowUserToResizeColumns = false;
+            this.dtgCRUD.AllowUserToResizeRows = false;
+            this.dtgCRUD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dtgCRUD.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dtgCRUD.BackgroundColor = System.Drawing.Color.LightSalmon;
+            this.dtgCRUD.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgCRUD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dtgCRUD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgCRUD.Cursor = System.Windows.Forms.Cursors.IBeam;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgCRUD.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dtgCRUD.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtgCRUD.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dtgCRUD.GridColor = System.Drawing.Color.LightSalmon;
+            this.dtgCRUD.Location = new System.Drawing.Point(3, 278);
+            this.dtgCRUD.MultiSelect = false;
+            this.dtgCRUD.Name = "dtgCRUD";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Firebrick;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgCRUD.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dtgCRUD.RowHeadersVisible = false;
+            this.dtgCRUD.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dtgCRUD.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtgCRUD.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.Firebrick;
+            this.dtgCRUD.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtgCRUD.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dtgCRUD.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.LightCoral;
+            this.dtgCRUD.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dtgCRUD.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgCRUD.Size = new System.Drawing.Size(933, 211);
+            this.dtgCRUD.TabIndex = 4;
+            this.dtgCRUD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DtgCRUD_CellContentClick);
+            // 
+            // initTrackerMenu
+            // 
+            this.initTrackerMenu.ForeColor = System.Drawing.Color.Black;
+            this.initTrackerMenu.Name = "initTrackerMenu";
+            this.initTrackerMenu.Size = new System.Drawing.Size(73, 20);
+            this.initTrackerMenu.Text = "InitTracker";
+            this.initTrackerMenu.Click += new System.EventHandler(this.InitTrackerMenu_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -830,8 +1097,9 @@
             this.BackgroundImage = global::Euphoria2._0.Properties.Resources.back;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -854,6 +1122,10 @@
             this.panel2.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgArmad)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgCRUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -921,5 +1193,22 @@
         private System.Windows.Forms.ToolStripMenuItem ArmadilhasMenu;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dtgArmad;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.DataGridView dtgCRUD;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtAC;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtHP;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtInit;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.ToolStripMenuItem initTrackerMenu;
     }
 }

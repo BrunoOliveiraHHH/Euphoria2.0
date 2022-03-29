@@ -8,7 +8,7 @@ namespace Euphoria.Dados
     {
         private List<ItemArmadilha> listArmad = new List<ItemArmadilha>();
 
-        #region Mod. Por Nvl
+        #region Armadilha
         public DataTable MontaDtArmad(DataTable dtArmad)
         {
             dtArmad = new DataTable();

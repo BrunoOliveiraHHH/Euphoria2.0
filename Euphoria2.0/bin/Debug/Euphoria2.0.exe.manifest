@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Euphoria2.0.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="Euphoria2.0.exe" version="1.0.0.8" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <description asmv2:iconFile="assets\img\icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Euphoria2.0" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
@@ -42,38 +43,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Euphoria.Dados.dll" size="53248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Euphoria.Dados.dll" size="58368">
       <assemblyIdentity name="Euphoria.Dados" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Fdi0NChb4bbMeQVfnSKp/ybUcQwGuniwIckYYxIbJHM=</dsig:DigestValue>
+        <dsig:DigestValue>fddVCi4dVHFjPCzKxUo91Wgyk7/Iop8lRe8oRppVXr8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Euphoria.Servico.dll" size="5632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Euphoria.Servico.dll" size="6144">
       <assemblyIdentity name="Euphoria.Servico" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>h4W7JQeUPFLHPp0ExbcUPe8uBCI8jaiZV8F8shuz+A0=</dsig:DigestValue>
+        <dsig:DigestValue>oUPgLwrcwKOjSpd9nZZzZJIwD2GgiKHRMsXvjBG2Wpk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Euphoria2.0.exe" size="307712">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Euphoria2.0.exe" size="389120">
       <assemblyIdentity name="Euphoria2.0" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CfaT3rDXRr76PQrWchsTw/LDBdUH/FIw2b80euNGgoE=</dsig:DigestValue>
+        <dsig:DigestValue>wtTcbvYKs8QloQ+hN0I07H5tw6dbJiVAv9b6RvTeZD8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

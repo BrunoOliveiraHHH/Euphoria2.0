@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ArmadilhasService.cs" />
     <Compile Include="ExpService.cs" />
+    <Compile Include="InitTrackerService.cs" />
     <Compile Include="ModService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TesouroService.cs" />
